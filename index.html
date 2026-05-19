@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_3.html -->
+<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_4.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -166,6 +166,63 @@
   /* TOAST */
   .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:#222; border:1px solid #333; color:var(--text); padding:10px 18px; border-radius:10px; font-size:13px; z-index:200; transition:transform 0.3s; white-space:nowrap; }
   .toast.show { transform:translateX(-50%) translateY(0); }
+
+  /* WEEKLY PLAN */
+  .wp-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+  .wp-week-label { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:var(--text); }
+  .wp-week-range { font-size:11px; color:var(--muted); letter-spacing:1px; margin-top:2px; font-family:'DM Sans',sans-serif; }
+  .wp-nav { display:flex; gap:8px; align-items:center; }
+  .wp-nav-btn { background:var(--surface); border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:8px; font-size:13px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s; }
+  .wp-nav-btn:hover { color:var(--text); border-color:#444; }
+  .wp-today-btn { background:rgba(255,60,60,0.1); border-color:rgba(255,60,60,0.3); color:var(--accent); font-size:11px; letter-spacing:1px; font-family:'DM Sans',sans-serif; }
+
+  .wp-days { display:flex; flex-direction:column; gap:10px; }
+  .wp-day-card { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; transition:border-color 0.2s; }
+  .wp-day-card.wp-today { border-color:var(--accent); }
+  .wp-day-header { display:flex; align-items:center; justify-content:space-between; padding:12px 16px; background:var(--surface); cursor:pointer; user-select:none; border-bottom:1px solid transparent; transition:background 0.15s; }
+  .wp-day-card.wp-today .wp-day-header { background:rgba(255,60,60,0.07); }
+  .wp-day-header:hover { background:rgba(255,255,255,0.03); }
+  .wp-day-card.wp-open .wp-day-header { border-bottom-color:var(--border); }
+  .wp-day-name { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:1px; color:var(--text); }
+  .wp-day-date { font-size:11px; color:var(--muted); letter-spacing:1px; margin-top:1px; }
+  .wp-today-badge { font-size:10px; letter-spacing:1.5px; color:var(--accent); background:rgba(255,60,60,0.12); border:1px solid rgba(255,60,60,0.3); border-radius:5px; padding:2px 8px; font-family:'DM Sans',sans-serif; }
+  .wp-task-count { font-size:11px; color:var(--muted); font-family:'DM Sans',sans-serif; }
+  .wp-chevron { font-size:12px; color:var(--muted); margin-left:6px; transition:transform 0.2s; }
+  .wp-day-card.wp-open .wp-chevron { transform:rotate(90deg); }
+
+  .wp-day-body { padding:14px 16px; display:none; }
+  .wp-day-card.wp-open .wp-day-body { display:block; }
+
+  .wp-tasks { display:flex; flex-direction:column; gap:7px; margin-bottom:12px; }
+  .wp-task { display:flex; align-items:flex-start; gap:10px; padding:10px 14px; background:rgba(255,255,255,0.025); border:1px solid var(--border); border-radius:9px; transition:opacity 0.2s; }
+  .wp-task.wp-done { opacity:0.45; }
+  .wp-task-chk { width:18px; height:18px; border-radius:5px; border:1.5px solid var(--border); flex-shrink:0; cursor:pointer; transition:all 0.2s; margin-top:2px; display:flex; align-items:center; justify-content:center; background:transparent; }
+  .wp-task.wp-done .wp-task-chk { background:var(--green); border-color:var(--green); }
+  .wp-task-chk svg { width:10px; height:10px; opacity:0; transition:opacity 0.2s; }
+  .wp-task.wp-done .wp-task-chk svg { opacity:1; }
+  .wp-task.wp-done .wp-task-info { opacity:0.6; }
+  .wp-task.wp-done .wp-task-name { text-decoration:line-through; }
+  .wp-task-info { flex:1; min-width:0; }
+  .wp-task-cat { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:2px; font-family:'DM Sans',sans-serif; font-weight:600; }
+  .wp-task-name { font-size:13px; color:var(--text); line-height:1.4; word-break:break-word; }
+  .wp-task-del { background:none; border:none; color:#2a2a2a; cursor:pointer; font-size:14px; padding:2px 4px; border-radius:4px; transition:color 0.2s; flex-shrink:0; margin-top:1px; }
+  .wp-task-del:hover { color:var(--accent); }
+
+  .wp-add-row { display:flex; gap:8px; flex-wrap:wrap; }
+  .wp-add-input { flex:1; min-width:160px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:9px 13px; color:var(--text); font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s; }
+  .wp-add-input:focus { border-color:var(--accent); }
+  .wp-cat-sel { font-size:11px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:9px 10px; color:var(--muted); cursor:pointer; outline:none; flex-shrink:0; font-family:'DM Sans',sans-serif; }
+  .wp-add-btn { font-size:11px; padding:9px 16px; border-radius:8px; border:none; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:#fff; cursor:pointer; transition:opacity 0.2s; white-space:nowrap; flex-shrink:0; font-family:'DM Sans',sans-serif; font-weight:600; letter-spacing:0.5px; }
+  .wp-add-btn:hover { opacity:0.85; }
+  .wp-empty { font-size:11px; color:var(--muted); padding:10px 0 6px; letter-spacing:0.5px; }
+
+  /* cat colors */
+  .wp-cat-film { color:var(--accent); }
+  .wp-cat-edit { color:var(--blue); }
+  .wp-cat-post { color:var(--green); }
+  .wp-cat-idea { color:var(--yellow); }
+  .wp-cat-collab { color:var(--purple); }
+  .wp-cat-other { color:var(--muted); }
 </style>
 </head>
 <body>
@@ -176,12 +233,13 @@
 </header>
 
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab(&#39;a&#39;,this)">🔥 All Ideas</button>
-  <button class="tab-btn" onclick="switchTab(&#39;s&#39;,this)">🎬 Solo Funny Gym</button>
+  <button class="tab-btn" onclick="switchTab(&#39;a&#39;,this)">🔥 All Ideas</button>
+  <button class="tab-btn active" onclick="switchTab(&#39;s&#39;,this)">🎬 Solo Funny Gym</button>
+  <button class="tab-btn" onclick="switchTab(&#39;w&#39;,this)">📅 Weekly Plan</button>
 </div>
 
 <!-- TAB: ALL IDEAS -->
-<div class="tab-panel active" id="panel-a">
+<div class="tab-panel" id="panel-a">
   <div class="stats-row">
     <div class="stat"><div class="stat-num" id="a-stat-total">10</div><div class="stat-label">Total</div></div>
     <div class="stat"><div class="stat-num" id="a-stat-left" style="color:var(--accent2)">9</div><div class="stat-label">To Film</div></div>
@@ -295,7 +353,7 @@
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,2)">
-                🎬 Shot List (0/3) ▲
+                🎬 Shot List (0/3) ▼
               </button>
               <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,2)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,2)">✕</button>
@@ -303,7 +361,7 @@
           </div>
         </div>
       </div>
-      <div class="shot-list-section open" id="shots-a-2">
+      <div class="shot-list-section" id="shots-a-2">
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-a-2">
           
@@ -702,7 +760,7 @@
 </div>
 
 <!-- TAB: SOLO -->
-<div class="tab-panel" id="panel-s">
+<div class="tab-panel active" id="panel-s">
   <div class="stats-row">
     <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">6</div><div class="stat-label">Total</div></div>
     <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">6</div><div class="stat-label">To Film</div></div>
@@ -759,7 +817,7 @@
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,1)">
-                🎬 Shot List (0/3) ▼
+                🎬 Shot List (0/3) ▲
               </button>
               <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,1)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,1)">✕</button>
@@ -767,7 +825,7 @@
           </div>
         </div>
       </div>
-      <div class="shot-list-section" id="shots-s-1">
+      <div class="shot-list-section open" id="shots-s-1">
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-s-1">
           
@@ -1088,6 +1146,225 @@
     </div></div>
 </div>
 
+<!-- TAB: WEEKLY PLAN -->
+<div class="tab-panel" id="panel-w">
+  <div class="wp-header">
+    <div>
+      <div class="wp-week-label" id="wp-week-label">THIS WEEK</div>
+      <div class="wp-week-range" id="wp-week-range">May 18 – May 24</div>
+    </div>
+    <div class="wp-nav">
+      <button class="wp-nav-btn" onclick="wpNav(-1)">← Prev</button>
+      <button class="wp-nav-btn wp-today-btn" onclick="wpGoToday()">Today</button>
+      <button class="wp-nav-btn" onclick="wpNav(1)">Next →</button>
+    </div>
+  </div>
+  <div class="wp-days" id="wp-days"><div class="wp-day-card" id="wpcard-2026-05-18">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-18&#39;)">
+        <div>
+          <div class="wp-day-name">Monday</div>
+          <div class="wp-day-date">5/18</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-18">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-18" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-18&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-18">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-18&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card wp-today wp-open" id="wpcard-2026-05-19">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-19&#39;)">
+        <div>
+          <div class="wp-day-name">Tuesday</div>
+          <div class="wp-day-date">5/19</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="wp-today-badge">TODAY</span>
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-19">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-19" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-19&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-19">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-19&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card" id="wpcard-2026-05-20">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-20&#39;)">
+        <div>
+          <div class="wp-day-name">Wednesday</div>
+          <div class="wp-day-date">5/20</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-20">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-20" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-20&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-20">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-20&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card" id="wpcard-2026-05-21">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-21&#39;)">
+        <div>
+          <div class="wp-day-name">Thursday</div>
+          <div class="wp-day-date">5/21</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-21">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-21" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-21&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-21">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-21&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card" id="wpcard-2026-05-22">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-22&#39;)">
+        <div>
+          <div class="wp-day-name">Friday</div>
+          <div class="wp-day-date">5/22</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-22">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-22" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-22&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-22">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-22&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card" id="wpcard-2026-05-23">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-23&#39;)">
+        <div>
+          <div class="wp-day-name">Saturday</div>
+          <div class="wp-day-date">5/23</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-23">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-23" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-23&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-23">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-23&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div><div class="wp-day-card" id="wpcard-2026-05-24">
+      <div class="wp-day-header" onclick="wpToggleDay(&#39;2026-05-24&#39;)">
+        <div>
+          <div class="wp-day-name">Sunday</div>
+          <div class="wp-day-date">5/24</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          
+          
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-2026-05-24">
+          <div class="wp-empty">Nothing planned yet — add below</div>
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-2026-05-24" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…" onkeydown="if(event.key===&#39;Enter&#39;)wpAddTask(&#39;2026-05-24&#39;)">
+          <select class="wp-cat-sel" id="wp-cat-2026-05-24">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask(&#39;2026-05-24&#39;)">+ ADD</button>
+        </div>
+      </div>
+    </div></div>
+</div>
+
 <!-- EDIT MODAL -->
 <div class="modal-overlay" id="edit-modal" onclick="closeModalIfOutside(event)">
   <div class="modal">
@@ -1201,6 +1478,7 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
   document.getElementById(`panel-${tab}`).classList.add('active');
+  if(tab==='w') renderWP();
 }
 
 function setFilter(f, tab, btn) {
@@ -1483,6 +1761,159 @@ function saveModal() {
   closeModal();
   showToast('Saved ✓');
 }
+
+// ===================== WEEKLY PLAN =====================
+let wpWeekOffset = 0; // 0 = current week
+let wpOpenDays = new Set();
+
+function wpGetMonday(offset) {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sun
+  const diff = (day === 0 ? -6 : 1 - day); // shift to Monday
+  const mon = new Date(now);
+  mon.setDate(now.getDate() + diff + offset * 7);
+  mon.setHours(0,0,0,0);
+  return mon;
+}
+
+function wpDateKey(d) {
+  return d.toISOString().split('T')[0]; // YYYY-MM-DD
+}
+
+function wpDayName(d) {
+  return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()];
+}
+
+function wpFmtDate(d) {
+  return `${d.getMonth()+1}/${d.getDate()}`;
+}
+
+function wpFmtRange(mon) {
+  const sun = new Date(mon); sun.setDate(mon.getDate()+6);
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  return `${months[mon.getMonth()]} ${mon.getDate()} – ${months[sun.getMonth()]} ${sun.getDate()}`;
+}
+
+function wpLoadTasks() {
+  return JSON.parse(localStorage.getItem('cos-wp') || '{}');
+}
+function wpSaveTasks(data) {
+  localStorage.setItem('cos-wp', JSON.stringify(data));
+}
+
+function wpCatColor(cat) {
+  return {Film:'wp-cat-film',Edit:'wp-cat-edit',Post:'wp-cat-post',Idea:'wp-cat-idea',Collab:'wp-cat-collab',Other:'wp-cat-other'}[cat]||'wp-cat-other';
+}
+
+function renderWP() {
+  const mon = wpGetMonday(wpWeekOffset);
+  const todayKey = wpDateKey(new Date());
+  const isCurrentWeek = wpWeekOffset === 0;
+
+  document.getElementById('wp-week-label').textContent = isCurrentWeek ? 'THIS WEEK' : (wpWeekOffset < 0 ? 'PAST WEEK' : `WEEK +${wpWeekOffset}`);
+  document.getElementById('wp-week-range').textContent = wpFmtRange(mon);
+
+  const tasks = wpLoadTasks();
+  const container = document.getElementById('wp-days');
+  const days = [];
+  for(let i=0;i<7;i++){
+    const d = new Date(mon); d.setDate(mon.getDate()+i);
+    days.push(d);
+  }
+
+  container.innerHTML = days.map(d => {
+    const key = wpDateKey(d);
+    const isToday = key === todayKey;
+    const dayTasks = tasks[key] || [];
+    const done = dayTasks.filter(t=>t.done).length;
+    const isOpen = wpOpenDays.has(key) || isToday;
+    const countLabel = dayTasks.length ? `${done}/${dayTasks.length}` : '';
+
+    return `<div class="wp-day-card${isToday?' wp-today':''}${isOpen?' wp-open':''}" id="wpcard-${key}">
+      <div class="wp-day-header" onclick="wpToggleDay('${key}')">
+        <div>
+          <div class="wp-day-name">${wpDayName(d)}</div>
+          <div class="wp-day-date">${wpFmtDate(d)}</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          ${isToday?'<span class="wp-today-badge">TODAY</span>':''}
+          ${countLabel?`<span class="wp-task-count">${countLabel}</span>`:''}
+          <span class="wp-chevron">▸</span>
+        </div>
+      </div>
+      <div class="wp-day-body">
+        <div class="wp-tasks" id="wp-tasks-${key}">
+          ${dayTasks.length ? dayTasks.map((t,idx)=>`
+            <div class="wp-task${t.done?' wp-done':''}">
+              <button class="wp-task-chk" onclick="wpToggleTask('${key}',${idx})">
+                <svg viewBox="0 0 12 12" fill="none"><path d="M2 6L5 9L10 3" stroke="#0a0a0a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div class="wp-task-info">
+                <div class="wp-task-cat ${wpCatColor(t.cat)}">${t.cat}</div>
+                <div class="wp-task-name">${escHtml(t.text)}</div>
+              </div>
+              <button class="wp-task-del" onclick="wpDelTask('${key}',${idx})">✕</button>
+            </div>`).join('') : '<div class="wp-empty">Nothing planned yet — add below</div>'}
+        </div>
+        <div class="wp-add-row">
+          <input class="wp-add-input" id="wp-in-${key}" type="text" placeholder="Film pre-workout bit, Edit mirror shot, Post reel…"
+            onkeydown="if(event.key==='Enter')wpAddTask('${key}')">
+          <select class="wp-cat-sel" id="wp-cat-${key}">
+            <option value="Film">🎬 Film</option>
+            <option value="Edit">✂️ Edit</option>
+            <option value="Post">📲 Post</option>
+            <option value="Idea">💡 Idea</option>
+            <option value="Collab">🤝 Collab</option>
+            <option value="Other">Other</option>
+          </select>
+          <button class="wp-add-btn" onclick="wpAddTask('${key}')">+ ADD</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function wpToggleDay(key) {
+  wpOpenDays.has(key) ? wpOpenDays.delete(key) : wpOpenDays.add(key);
+  renderWP();
+}
+function wpNav(dir) { wpWeekOffset += dir; renderWP(); }
+function wpGoToday() { wpWeekOffset = 0; renderWP(); }
+
+function wpAddTask(key) {
+  const inp = document.getElementById(`wp-in-${key}`);
+  const text = inp.value.trim(); if(!text) return;
+  const cat = document.getElementById(`wp-cat-${key}`).value;
+  const data = wpLoadTasks();
+  if(!data[key]) data[key] = [];
+  data[key].push({text, cat, done:false});
+  wpSaveTasks(data);
+  wpOpenDays.add(key);
+  renderWP();
+  setTimeout(()=>{const el=document.getElementById(`wp-in-${key}`);if(el)el.focus();},10);
+}
+
+function wpToggleTask(key, idx) {
+  const data = wpLoadTasks();
+  if(data[key] && data[key][idx]) {
+    data[key][idx].done = !data[key][idx].done;
+    wpSaveTasks(data);
+    wpOpenDays.add(key);
+    renderWP();
+  }
+}
+function wpDelTask(key, idx) {
+  const data = wpLoadTasks();
+  if(data[key]) {
+    data[key].splice(idx,1);
+    wpSaveTasks(data);
+    wpOpenDays.add(key);
+    renderWP();
+  }
+}
+
+// init wp on tab open
+const origSwitch = switchTab;
 
 // ===================== KEYBOARD =====================
 document.getElementById('a-input-title').addEventListener('keydown',e=>{if(e.key==='Enter')addIdea('a');});
