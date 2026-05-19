@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_2.html -->
+<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_3.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comedy OS 😭</title>
-<link href="./Comedy OS 😭_files/css2" rel="stylesheet">
+<link href="./index_files/css2" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -20,283 +20,152 @@
     --blue: #3b82f6;
     --purple: #a855f7;
   }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:24px 16px 100px; }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  header { text-align:center; margin-bottom:20px; padding-top:8px; }
+  header h1 { font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:3px; background:linear-gradient(135deg,#ff3c3c,#ff8c00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
+  header p { color:var(--muted); font-size:13px; margin-top:6px; letter-spacing:1px; text-transform:uppercase; }
 
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    min-height: 100vh;
-    padding: 24px 16px 100px;
-  }
+  .tab-bar { display:flex; gap:0; margin-bottom:24px; border-bottom:1px solid var(--border); overflow-x:auto; }
+  .tab-btn { background:transparent; border:none; border-bottom:2px solid transparent; color:var(--muted); padding:10px 16px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:500; cursor:pointer; white-space:nowrap; transition:all 0.2s; margin-bottom:-1px; }
+  .tab-btn.active { color:var(--text); border-bottom-color:var(--accent); }
+  .tab-btn:hover:not(.active) { color:#888; }
+  .tab-panel { display:none; }
+  .tab-panel.active { display:block; }
 
-  header { text-align: center; margin-bottom: 20px; padding-top: 8px; }
-  header h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
-    letter-spacing: 3px;
-    background: linear-gradient(135deg, #ff3c3c, #ff8c00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    line-height: 1;
-  }
-  header p { color: var(--muted); font-size: 13px; margin-top: 6px; letter-spacing: 1px; text-transform: uppercase; }
+  .stats-row { display:flex; gap:10px; margin-bottom:24px; justify-content:center; }
+  .stat { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 18px; text-align:center; flex:1; max-width:120px; }
+  .stat-num { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--accent); }
+  .stat-label { font-size:10px; color:var(--muted); text-transform:uppercase; letter-spacing:1px; }
 
-  /* TABS */
-  .tab-bar {
-    display: flex;
-    gap: 0;
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-    overflow-x: auto;
-  }
-  .tab-btn {
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid transparent;
-    color: var(--muted);
-    padding: 10px 16px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.2s;
-    margin-bottom: -1px;
-  }
-  .tab-btn.active { color: var(--text); border-bottom-color: var(--accent); }
-  .tab-btn:hover:not(.active) { color: #888; }
+  .filters { display:flex; gap:8px; margin-bottom:20px; flex-wrap:wrap; }
+  .filter-btn { background:var(--surface); border:1px solid var(--border); color:var(--muted); padding:6px 14px; border-radius:20px; font-size:12px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s; letter-spacing:0.5px; }
+  .filter-btn.active, .filter-btn:hover { border-color:var(--accent); color:var(--accent); }
 
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
+  .add-form { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:16px; margin-bottom:24px; }
+  .add-form h3 { font-size:12px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); margin-bottom:12px; }
+  .form-row { display:flex; gap:8px; margin-bottom:10px; }
+  input,select,textarea { background:var(--card); border:1px solid var(--border); color:var(--text); padding:10px 12px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s; width:100%; }
+  input:focus,select:focus,textarea:focus { border-color:var(--accent); }
+  select option { background:var(--card); }
+  textarea { resize:none; height:60px; }
+  .add-btn { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:white; border:none; padding:10px 20px; border-radius:8px; font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1px; cursor:pointer; width:100%; transition:opacity 0.2s; }
+  .add-btn:hover { opacity:0.85; }
+  .add-btn-solo { background:linear-gradient(135deg,var(--purple),var(--blue)); }
 
-  /* STATS */
-  .stats-row { display: flex; gap: 10px; margin-bottom: 24px; justify-content: center; }
-  .stat {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px 18px;
-    text-align: center;
-    flex: 1;
-    max-width: 120px;
-  }
-  .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--accent); }
-  .stat-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+  .section-label { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--muted); margin-bottom:10px; margin-top:4px; }
 
-  /* FILTERS */
-  .filters { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
-  .filter-btn {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--muted);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 12px;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.2s;
-    letter-spacing: 0.5px;
-  }
-  .filter-btn.active, .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .ideas-list { display:flex; flex-direction:column; gap:10px; }
 
-  /* ADD FORM */
-  .add-form {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 16px;
-    margin-bottom: 24px;
-  }
-  .add-form h3 { font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 12px; }
-  .form-row { display: flex; gap: 8px; margin-bottom: 10px; }
+  .idea-card { background:var(--card); border:1px solid var(--border); border-radius:12px; position:relative; overflow:hidden; transition:border-color 0.2s, opacity 0.15s; }
+  .idea-card.done { opacity:0.45; border-color:var(--green); }
+  .idea-card.dragging { opacity:0.35; border-color:var(--accent) !important; }
+  .idea-card.drag-over { border-color:var(--accent2) !important; border-style:dashed; background:#1a1400; }
+  .idea-card::before { content:''; position:absolute; left:0; top:0; bottom:0; width:3px; border-radius:12px 0 0 12px; z-index:1; }
+  .idea-card.p-fire::before { background:var(--accent); }
+  .idea-card.p-high::before { background:var(--accent2); }
+  .idea-card.p-med::before { background:var(--yellow); }
+  .idea-card.p-low::before { background:var(--muted); }
+  .solo-card.p-fire::before { background:var(--purple); }
+  .solo-card.p-high::before { background:var(--blue); }
 
-  input, select, textarea {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    outline: none;
-    transition: border-color 0.2s;
-    width: 100%;
-  }
-  input:focus, select:focus, textarea:focus { border-color: var(--accent); }
-  select option { background: var(--card); }
-  textarea { resize: none; height: 60px; }
+  .card-main { padding:14px; }
+  .card-top { display:flex; align-items:flex-start; gap:10px; }
+  .drag-handle { color:#2e2e2e; cursor:grab; font-size:18px; flex-shrink:0; margin-top:1px; user-select:none; transition:color 0.2s; line-height:1.1; }
+  .drag-handle:hover { color:#555; }
+  .drag-handle:active { cursor:grabbing; }
+  .check-btn { width:22px; height:22px; border-radius:6px; border:2px solid var(--border); background:transparent; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:12px; transition:all 0.2s; margin-top:1px; }
+  .idea-card.done .check-btn { background:var(--green); border-color:var(--green); }
+  .card-content { flex:1; min-width:0; }
+  .idea-title { font-size:14px; font-weight:500; line-height:1.4; margin-bottom:6px; }
+  .idea-card.done .idea-title { text-decoration:line-through; color:var(--muted); }
+  .idea-notes { font-size:12px; color:var(--muted); margin-bottom:8px; line-height:1.4; }
+  .card-meta { display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-bottom:10px; }
+  .tag { font-size:10px; padding:3px 8px; border-radius:20px; letter-spacing:0.5px; font-weight:500; text-transform:uppercase; }
+  .tag-priority.fire { background:rgba(255,60,60,0.15); color:var(--accent); border:1px solid rgba(255,60,60,0.3); }
+  .tag-priority.high { background:rgba(255,140,0,0.15); color:var(--accent2); border:1px solid rgba(255,140,0,0.3); }
+  .tag-priority.med { background:rgba(250,204,21,0.15); color:var(--yellow); border:1px solid rgba(250,204,21,0.3); }
+  .tag-priority.low { background:rgba(85,85,85,0.2); color:var(--muted); border:1px solid var(--border); }
+  .tag-status { background:rgba(34,197,94,0.1); color:var(--green); border:1px solid rgba(34,197,94,0.3); }
+  .tag-category { background:rgba(255,255,255,0.05); color:#888; border:1px solid var(--border); }
+  .tag-solo { background:rgba(168,85,247,0.12); color:var(--purple); border:1px solid rgba(168,85,247,0.3); }
+  .card-actions { display:flex; gap:8px; align-items:center; }
 
-  .add-btn {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 16px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    width: 100%;
-    transition: opacity 0.2s;
-  }
-  .add-btn:hover { opacity: 0.85; }
+  .shot-toggle-btn { background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.25); color:var(--blue); font-size:11px; padding:5px 10px; border-radius:6px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s; }
+  .shot-toggle-btn:hover { background:rgba(59,130,246,0.2); }
 
-  /* SOLO tab add btn */
-  .add-btn-solo {
-    background: linear-gradient(135deg, var(--purple), var(--blue));
-  }
+  .edit-idea-btn { background:rgba(255,255,255,0.04); border:1px solid var(--border); color:#666; font-size:12px; padding:5px 8px; border-radius:6px; cursor:pointer; font-family:'DM Sans',sans-serif; transition:all 0.2s; }
+  .edit-idea-btn:hover { color:var(--text); border-color:#444; }
 
-  .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 10px; margin-top: 4px; }
+  .delete-btn { background:transparent; border:none; color:#333; cursor:pointer; font-size:16px; padding:2px 4px; border-radius:4px; transition:color 0.2s; margin-left:auto; }
+  .delete-btn:hover { color:var(--accent); }
 
-  /* CARDS */
-  .ideas-list { display: flex; flex-direction: column; gap: 10px; }
-
-  .idea-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    transition: border-color 0.2s, opacity 0.15s;
-  }
-  .idea-card.done { opacity: 0.45; border-color: var(--green); }
-  .idea-card.dragging { opacity: 0.35; border-color: var(--accent) !important; }
-  .idea-card.drag-over { border-color: var(--accent2) !important; border-style: dashed; background: #1a1400; }
-
-  .idea-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 3px;
-    border-radius: 12px 0 0 12px;
-    z-index: 1;
-  }
-  .idea-card.p-fire::before { background: var(--accent); }
-  .idea-card.p-high::before { background: var(--accent2); }
-  .idea-card.p-med::before { background: var(--yellow); }
-  .idea-card.p-low::before { background: var(--muted); }
-  /* Solo cards get purple accent */
-  .solo-card.p-fire::before { background: var(--purple); }
-  .solo-card.p-high::before { background: var(--blue); }
-
-  .card-main { padding: 14px; }
-  .card-top { display: flex; align-items: flex-start; gap: 10px; }
-
-  .drag-handle {
-    color: #2e2e2e;
-    cursor: grab;
-    font-size: 18px;
-    flex-shrink: 0;
-    margin-top: 1px;
-    user-select: none;
-    transition: color 0.2s;
-    line-height: 1.1;
-  }
-  .drag-handle:hover { color: #555; }
-  .drag-handle:active { cursor: grabbing; }
-
-  .check-btn {
-    width: 22px; height: 22px;
-    border-radius: 6px;
-    border: 2px solid var(--border);
-    background: transparent;
-    cursor: pointer;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    transition: all 0.2s;
-    margin-top: 1px;
-  }
-  .idea-card.done .check-btn { background: var(--green); border-color: var(--green); }
-
-  .card-content { flex: 1; min-width: 0; }
-  .idea-title { font-size: 14px; font-weight: 500; line-height: 1.4; margin-bottom: 6px; }
-  .idea-card.done .idea-title { text-decoration: line-through; color: var(--muted); }
-  .idea-notes { font-size: 12px; color: var(--muted); margin-bottom: 8px; line-height: 1.4; }
-
-  .card-meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 10px; }
-
-  .tag { font-size: 10px; padding: 3px 8px; border-radius: 20px; letter-spacing: 0.5px; font-weight: 500; text-transform: uppercase; }
-  .tag-priority.fire { background: rgba(255,60,60,0.15); color: var(--accent); border: 1px solid rgba(255,60,60,0.3); }
-  .tag-priority.high { background: rgba(255,140,0,0.15); color: var(--accent2); border: 1px solid rgba(255,140,0,0.3); }
-  .tag-priority.med { background: rgba(250,204,21,0.15); color: var(--yellow); border: 1px solid rgba(250,204,21,0.3); }
-  .tag-priority.low { background: rgba(85,85,85,0.2); color: var(--muted); border: 1px solid var(--border); }
-  .tag-status { background: rgba(34,197,94,0.1); color: var(--green); border: 1px solid rgba(34,197,94,0.3); }
-  .tag-category { background: rgba(255,255,255,0.05); color: #888; border: 1px solid var(--border); }
-  .tag-solo { background: rgba(168,85,247,0.12); color: var(--purple); border: 1px solid rgba(168,85,247,0.3); }
-
-  .card-actions { display: flex; gap: 8px; align-items: center; }
-
-  .shot-toggle-btn {
-    background: rgba(59,130,246,0.1);
-    border: 1px solid rgba(59,130,246,0.25);
-    color: var(--blue);
-    font-size: 11px;
-    padding: 5px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: all 0.2s;
-  }
-  .shot-toggle-btn:hover { background: rgba(59,130,246,0.2); }
-
-  .delete-btn {
-    background: transparent;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 2px 4px;
-    border-radius: 4px;
-    transition: color 0.2s;
-    margin-left: auto;
-  }
-  .delete-btn:hover { color: var(--accent); }
+  /* SHOT PROGRESS BAR */
+  .shot-progress { height:3px; background:var(--border); border-radius:2px; margin-bottom:10px; overflow:hidden; }
+  .shot-progress-fill { height:100%; background:linear-gradient(90deg,var(--blue),var(--purple)); border-radius:2px; transition:width 0.3s; }
 
   /* SHOT LIST */
-  .shot-list-section { border-top: 1px solid var(--border); padding: 12px 14px 14px; display: none; }
-  .shot-list-section.open { display: block; }
-  .shot-list-header { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; color: var(--blue); margin-bottom: 10px; }
-  .shot-items { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+  .shot-list-section { border-top:1px solid var(--border); padding:12px 14px 14px; display:none; }
+  .shot-list-section.open { display:block; }
+  .shot-list-header { font-size:10px; text-transform:uppercase; letter-spacing:2px; color:var(--blue); margin-bottom:10px; }
+  .shot-items { display:flex; flex-direction:column; gap:6px; margin-bottom:10px; }
 
-  .shot-item {
-    display: flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.025);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 8px 10px;
-  }
-  .shot-item.shot-done { opacity: 0.5; }
-  .shot-num { font-family: 'Bebas Neue', sans-serif; font-size: 17px; color: var(--accent); min-width: 18px; text-align: center; flex-shrink: 0; }
-  .shot-check {
-    width: 18px; height: 18px;
-    border-radius: 4px;
-    border: 2px solid var(--border);
-    background: transparent;
-    cursor: pointer;
-    flex-shrink: 0;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px;
-    transition: all 0.2s;
-  }
-  .shot-item.shot-done .shot-check { background: var(--green); border-color: var(--green); }
-  .shot-text { font-size: 13px; flex: 1; line-height: 1.3; }
-  .shot-item.shot-done .shot-text { text-decoration: line-through; color: var(--muted); }
-  .shot-delete { background: transparent; border: none; color: #2a2a2a; cursor: pointer; font-size: 12px; padding: 2px; transition: color 0.2s; flex-shrink: 0; }
-  .shot-delete:hover { color: var(--accent); }
+  .shot-item { display:flex; align-items:center; gap:8px; background:rgba(255,255,255,0.025); border:1px solid var(--border); border-radius:8px; padding:8px 10px; transition:border-color 0.2s; }
+  .shot-item.shot-done { opacity:0.5; }
+  .shot-item.shot-drag-over { border-color:var(--accent2); border-style:dashed; background:#1a1400; }
+  .shot-item.shot-dragging { opacity:0.3; border-color:var(--accent); }
 
-  .add-shot-row { display: flex; gap: 6px; }
-  .add-shot-row input { font-size: 12px; padding: 8px 10px; height: auto; }
-  .add-shot-btn { background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.3); color: var(--blue); padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 20px; flex-shrink: 0; transition: all 0.2s; line-height: 1; }
-  .add-shot-btn:hover { background: rgba(59,130,246,0.25); }
+  .shot-drag-handle { color:#2e2e2e; cursor:grab; font-size:14px; flex-shrink:0; user-select:none; transition:color 0.2s; line-height:1; }
+  .shot-drag-handle:hover { color:#555; }
+  .shot-drag-handle:active { cursor:grabbing; }
 
-  .empty { text-align: center; color: var(--muted); padding: 40px 20px; font-size: 13px; }
-  .empty span { display: block; font-size: 32px; margin-bottom: 8px; }
-  .no-shots-msg { font-size: 12px; color: var(--muted); padding: 4px 0 6px; }
+  .shot-num { font-family:'Bebas Neue',sans-serif; font-size:17px; color:var(--accent); min-width:18px; text-align:center; flex-shrink:0; }
+  .shot-check { width:18px; height:18px; border-radius:4px; border:2px solid var(--border); background:transparent; cursor:pointer; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10px; transition:all 0.2s; }
+  .shot-item.shot-done .shot-check { background:var(--green); border-color:var(--green); }
+
+  /* Editable shot text */
+  .shot-text { font-size:13px; flex:1; line-height:1.3; cursor:text; border-radius:4px; padding:2px 4px; transition:background 0.15s; }
+  .shot-text:hover { background:rgba(255,255,255,0.04); }
+  .shot-item.shot-done .shot-text { text-decoration:line-through; color:var(--muted); }
+
+  .shot-text-input { font-size:13px; flex:1; line-height:1.3; background:rgba(59,130,246,0.08); border:1px solid rgba(59,130,246,0.4) !important; color:var(--text); padding:3px 6px; border-radius:4px; outline:none; font-family:'DM Sans',sans-serif; }
+
+  .shot-delete { background:transparent; border:none; color:#2a2a2a; cursor:pointer; font-size:12px; padding:2px; transition:color 0.2s; flex-shrink:0; }
+  .shot-delete:hover { color:var(--accent); }
+
+  .add-shot-row { display:flex; gap:6px; }
+  .add-shot-row input { font-size:12px; padding:8px 10px; height:auto; }
+  .add-shot-btn { background:rgba(59,130,246,0.15); border:1px solid rgba(59,130,246,0.3); color:var(--blue); padding:8px 14px; border-radius:8px; cursor:pointer; font-size:20px; flex-shrink:0; transition:all 0.2s; line-height:1; }
+  .add-shot-btn:hover { background:rgba(59,130,246,0.25); }
+
+  .empty { text-align:center; color:var(--muted); padding:40px 20px; font-size:13px; }
+  .empty span { display:block; font-size:32px; margin-bottom:8px; }
+  .no-shots-msg { font-size:12px; color:var(--muted); padding:4px 0 6px; }
+
+  /* EDIT MODAL */
+  .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.8); z-index:100; display:none; align-items:center; justify-content:center; padding:20px; }
+  .modal-overlay.open { display:flex; }
+  .modal { background:#161616; border:1px solid #2a2a2a; border-radius:16px; width:100%; max-width:480px; padding:20px; position:relative; max-height:90vh; overflow-y:auto; }
+  .modal-title { font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:2px; color:var(--text); margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+  .modal-close { position:absolute; top:16px; right:16px; background:transparent; border:none; color:#555; font-size:20px; cursor:pointer; transition:color 0.2s; }
+  .modal-close:hover { color:var(--text); }
+  .modal-field { margin-bottom:12px; }
+  .modal-label { font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--muted); margin-bottom:6px; display:block; }
+  .modal-input { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); padding:10px 12px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:13px; outline:none; transition:border-color 0.2s; }
+  .modal-input:focus { border-color:var(--accent); }
+  .modal-textarea { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); padding:10px 12px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:13px; outline:none; resize:none; height:70px; transition:border-color 0.2s; }
+  .modal-textarea:focus { border-color:var(--accent); }
+  .modal-select { width:100%; background:var(--card); border:1px solid var(--border); color:var(--text); padding:10px 12px; border-radius:8px; font-family:'DM Sans',sans-serif; font-size:13px; outline:none; }
+  .modal-select:focus { border-color:var(--accent); }
+  .modal-row { display:flex; gap:10px; }
+  .modal-row .modal-field { flex:1; }
+  .modal-save-btn { background:linear-gradient(135deg,var(--accent),var(--accent2)); color:white; border:none; padding:11px 20px; border-radius:8px; font-family:'Bebas Neue',sans-serif; font-size:16px; letter-spacing:1px; cursor:pointer; width:100%; transition:opacity 0.2s; margin-top:4px; }
+  .modal-save-btn:hover { opacity:0.85; }
+
+  /* TOAST */
+  .toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:#222; border:1px solid #333; color:var(--text); padding:10px 18px; border-radius:10px; font-size:13px; z-index:200; transition:transform 0.3s; white-space:nowrap; }
+  .toast.show { transform:translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -306,14 +175,13 @@
   <p>Funny Gym Content Tracker</p>
 </header>
 
-<!-- TAB BAR -->
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab(&#39;all&#39;, this)">🔥 All Ideas</button>
-  <button class="tab-btn" onclick="switchTab(&#39;solo&#39;, this)">🎬 Solo Funny Gym</button>
+  <button class="tab-btn active" onclick="switchTab(&#39;a&#39;,this)">🔥 All Ideas</button>
+  <button class="tab-btn" onclick="switchTab(&#39;s&#39;,this)">🎬 Solo Funny Gym</button>
 </div>
 
-<!-- ===== TAB 1: ALL IDEAS ===== -->
-<div class="tab-panel active" id="panel-all">
+<!-- TAB: ALL IDEAS -->
+<div class="tab-panel active" id="panel-a">
   <div class="stats-row">
     <div class="stat"><div class="stat-num" id="a-stat-total">10</div><div class="stat-label">Total</div></div>
     <div class="stat"><div class="stat-num" id="a-stat-left" style="color:var(--accent2)">9</div><div class="stat-label">To Film</div></div>
@@ -344,13 +212,17 @@
         <option value="Pre-Workout">Pre-Workout</option>
         <option value="Cardio">Cardio</option>
         <option value="Post-Workout">Post-Workout</option>
+        <option value="Mirror">Mirror</option>
+        <option value="Phone">Phone</option>
+        <option value="Waiting">Waiting</option>
+        <option value="Setup">Setup</option>
         <option value="Other">Other</option>
       </select>
     </div>
     <button class="add-btn" onclick="addIdea(&#39;a&#39;)">ADD IDEA</button>
   </div>
   <div class="section-label">All Ideas — drag ⠿ to reorder</div>
-  <div class="ideas-list" id="a-list"><div class="idea-card p-fire done" id="a-card-1" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,1)" ondragover="dragOver(event,&#39;a&#39;,1)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,1)" ondragend="dragEnd()">
+  <div class="ideas-list" id="a-list"><div class="idea-card p-fire done" id="a-card-1" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,1)" ondragover="cardDragOver(event,&#39;a&#39;,1)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,1)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -364,35 +236,40 @@
               
               <span class="tag tag-status">✓ Posted</span>
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:100%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,1)">
                 🎬 Shot List (3/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,1)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,1)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-1">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-1">
           
-            <div class="shot-item shot-done">
+            <div class="shot-item shot-done" id="shot-el-a-1-1" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,1,1)" ondragover="shotDragOver(event,&#39;a&#39;,1,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,1,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,1,1)">✓</button>
-              <span class="shot-text">Extreme closeup — fingers scrolling playlist</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,1,1)">Extreme closeup — fingers scrolling playlist</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,1,1)">✕</button>
             </div>
-            <div class="shot-item shot-done">
+            <div class="shot-item shot-done" id="shot-el-a-1-2" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,1,2)" ondragover="shotDragOver(event,&#39;a&#39;,1,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,1,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,1,2)">✓</button>
-              <span class="shot-text">Clock visible in corner while still scrolling</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,1,2)">Clock visible in corner while still scrolling</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,1,2)">✕</button>
             </div>
-            <div class="shot-item shot-done">
+            <div class="shot-item shot-done" id="shot-el-a-1-3" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,1,3)" ondragover="shotDragOver(event,&#39;a&#39;,1,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,1,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,1,3)">✓</button>
-              <span class="shot-text">Hit play — cut — still scrolling 😭</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,1,3)">Hit play — cut — still scrolling 😭</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,1,3)">✕</button>
             </div>
         </div>
@@ -401,7 +278,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,1)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire" id="a-card-2" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,2)" ondragover="dragOver(event,&#39;a&#39;,2)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,2)" ondragend="dragEnd()">
+    </div><div class="idea-card p-fire" id="a-card-2" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,2)" ondragover="cardDragOver(event,&#39;a&#39;,2)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,2)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -415,35 +292,40 @@
               
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,2)">
-                🎬 Shot List (0/3) ▼
+                🎬 Shot List (0/3) ▲
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,2)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,2)">✕</button>
             </div>
           </div>
         </div>
       </div>
-      <div class="shot-list-section" id="shots-a-2">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+      <div class="shot-list-section open" id="shots-a-2">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-2">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-2-1" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,2,1)" ondragover="shotDragOver(event,&#39;a&#39;,2,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,2,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,2,1)"></button>
-              <span class="shot-text">Wide — rack weight, sit down</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,2,1)">Wide — rack weight, sit down</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,2,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-2-2" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,2,2)" ondragover="shotDragOver(event,&#39;a&#39;,2,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,2,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,2,2)"></button>
-              <span class="shot-text">Closeup of phone doing nothing</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,2,2)">Closeup of phone doing nothing</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,2,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-2-3" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,2,3)" ondragover="shotDragOver(event,&#39;a&#39;,2,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,2,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,2,3)"></button>
-              <span class="shot-text">Cut back wide — still on phone, long pause</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,2,3)">Cut back wide — still on phone, long pause</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,2,3)">✕</button>
             </div>
         </div>
@@ -452,7 +334,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,2)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high" id="a-card-3" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,3)" ondragover="dragOver(event,&#39;a&#39;,3)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,3)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high" id="a-card-3" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,3)" ondragover="cardDragOver(event,&#39;a&#39;,3)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,3)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -466,18 +348,20 @@
               
               
             </div>
+            
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,3)">
                 🎬 Shot List  ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,3)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,3)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-3">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-3">
           <div class="no-shots-msg">No shots yet — add below</div>
         </div>
         <div class="add-shot-row">
@@ -485,7 +369,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,3)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high" id="a-card-4" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,4)" ondragover="dragOver(event,&#39;a&#39;,4)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,4)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high" id="a-card-4" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,4)" ondragover="cardDragOver(event,&#39;a&#39;,4)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,4)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -499,18 +383,20 @@
               
               
             </div>
+            
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,4)">
                 🎬 Shot List  ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,4)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,4)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-4">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-4">
           <div class="no-shots-msg">No shots yet — add below</div>
         </div>
         <div class="add-shot-row">
@@ -518,7 +404,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,4)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire" id="a-card-5" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,5)" ondragover="dragOver(event,&#39;a&#39;,5)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,5)" ondragend="dragEnd()">
+    </div><div class="idea-card p-fire" id="a-card-5" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,5)" ondragover="cardDragOver(event,&#39;a&#39;,5)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,5)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -532,41 +418,47 @@
               
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,5)">
                 🎬 Shot List (0/4) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,5)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,5)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-5">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-5">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-5-1" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,5,1)" ondragover="shotDragOver(event,&#39;a&#39;,5,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,5,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,5,1)"></button>
-              <span class="shot-text">POV — rack weight, look up, eye contact begins</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,5,1)">POV — rack weight, look up, eye contact begins</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,5,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-5-2" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,5,2)" ondragover="shotDragOver(event,&#39;a&#39;,5,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,5,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,5,2)"></button>
-              <span class="shot-text">Mid lift — still staring, zero expression</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,5,2)">Mid lift — still staring, zero expression</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,5,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-5-3" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,5,3)" ondragover="shotDragOver(event,&#39;a&#39;,5,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,5,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,5,3)"></button>
-              <span class="shot-text">Finish set, look away — cut back — still staring</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,5,3)">Finish set, look away — cut back — still staring</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,5,3)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-5-4" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,5,4)" ondragover="shotDragOver(event,&#39;a&#39;,5,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,5,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,5,4)"></button>
-              <span class="shot-text">Wide shot for context (how close they are)</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,5,4)">Wide shot for context (how close they are)</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,5,4)">✕</button>
             </div>
         </div>
@@ -575,7 +467,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,5)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire" id="a-card-6" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,6)" ondragover="dragOver(event,&#39;a&#39;,6)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,6)" ondragend="dragEnd()">
+    </div><div class="idea-card p-fire" id="a-card-6" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,6)" ondragover="cardDragOver(event,&#39;a&#39;,6)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,6)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -589,41 +481,47 @@
               
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,6)">
                 🎬 Shot List (0/4) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,6)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,6)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-6">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-6">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-6-1" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,6,1)" ondragover="shotDragOver(event,&#39;a&#39;,6,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,6,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,6,1)"></button>
-              <span class="shot-text">Shot of Secret Stuff shaker in hand</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,6,1)">Shot of Secret Stuff shaker in hand</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,6,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-6-2" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,6,2)" ondragover="shotDragOver(event,&#39;a&#39;,6,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,6,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,6,2)"></button>
-              <span class="shot-text">Drink it — dead face to camera</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,6,2)">Drink it — dead face to camera</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,6,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-6-3" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,6,3)" ondragover="shotDragOver(event,&#39;a&#39;,6,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,6,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,6,3)"></button>
-              <span class="shot-text">Jump cuts — still sitting in car, nothing happening</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,6,3)">Jump cuts — still sitting in car, nothing happening</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,6,3)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-6-4" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,6,4)" ondragover="shotDragOver(event,&#39;a&#39;,6,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,6,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,6,4)"></button>
-              <span class="shot-text">It kicks in — sudden energy reaction 😤</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,6,4)">It kicks in — sudden energy reaction 😤</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,6,4)">✕</button>
             </div>
         </div>
@@ -632,7 +530,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,6)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high" id="a-card-7" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,7)" ondragover="dragOver(event,&#39;a&#39;,7)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,7)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high" id="a-card-7" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,7)" ondragover="cardDragOver(event,&#39;a&#39;,7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,7)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -646,18 +544,20 @@
               
               
             </div>
+            
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,7)">
                 🎬 Shot List  ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,7)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,7)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-7">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-7">
           <div class="no-shots-msg">No shots yet — add below</div>
         </div>
         <div class="add-shot-row">
@@ -665,7 +565,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,7)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high" id="a-card-8" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,8)" ondragover="dragOver(event,&#39;a&#39;,8)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,8)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high" id="a-card-8" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,8)" ondragover="cardDragOver(event,&#39;a&#39;,8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,8)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -679,41 +579,47 @@
               
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,8)">
                 🎬 Shot List (0/4) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,8)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,8)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-8">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-8">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-8-1" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,8,1)" ondragover="shotDragOver(event,&#39;a&#39;,8,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,8,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,8,1)"></button>
-              <span class="shot-text">Approach someone on machine</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,8,1)">Approach someone on machine</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,8,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-8-2" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,8,2)" ondragover="shotDragOver(event,&#39;a&#39;,8,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,8,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,8,2)"></button>
-              <span class="shot-text">Inaudible convo — they gesture 'sure'</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,8,2)">Inaudible convo — they gesture 'sure'</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,8,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-8-3" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,8,3)" ondragover="shotDragOver(event,&#39;a&#39;,8,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,8,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,8,3)"></button>
-              <span class="shot-text">Confused reaction — you misread it</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,8,3)">Confused reaction — you misread it</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,8,3)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-a-8-4" draggable="true" ondragstart="shotDragStart(event,&#39;a&#39;,8,4)" ondragover="shotDragOver(event,&#39;a&#39;,8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;a&#39;,8,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;a&#39;,8,4)"></button>
-              <span class="shot-text">Slow defeated walk to the exit 💀</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;a&#39;,8,4)">Slow defeated walk to the exit 💀</span>
               <button class="shot-delete" onclick="delShot(&#39;a&#39;,8,4)">✕</button>
             </div>
         </div>
@@ -722,7 +628,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,8)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-med" id="a-card-9" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,9)" ondragover="dragOver(event,&#39;a&#39;,9)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,9)" ondragend="dragEnd()">
+    </div><div class="idea-card p-med" id="a-card-9" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,9)" ondragover="cardDragOver(event,&#39;a&#39;,9)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,9)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -736,18 +642,20 @@
               
               
             </div>
+            
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,9)">
                 🎬 Shot List  ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,9)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,9)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-9">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-9">
           <div class="no-shots-msg">No shots yet — add below</div>
         </div>
         <div class="add-shot-row">
@@ -755,7 +663,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;a&#39;,9)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high" id="a-card-10" draggable="true" ondragstart="dragStart(event,&#39;a&#39;,10)" ondragover="dragOver(event,&#39;a&#39;,10)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;a&#39;,10)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high" id="a-card-10" draggable="true" ondragstart="cardDragStart(event,&#39;a&#39;,10)" ondragover="cardDragOver(event,&#39;a&#39;,10)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;a&#39;,10)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -769,18 +677,20 @@
               
               
             </div>
+            
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;a&#39;,10)">
                 🎬 Shot List  ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;a&#39;,10)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;a&#39;,10)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-a-10">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-a-10">
           <div class="no-shots-msg">No shots yet — add below</div>
         </div>
         <div class="add-shot-row">
@@ -791,8 +701,8 @@
     </div></div>
 </div>
 
-<!-- ===== TAB 2: SOLO FUNNY GYM ===== -->
-<div class="tab-panel" id="panel-solo">
+<!-- TAB: SOLO -->
+<div class="tab-panel" id="panel-s">
   <div class="stats-row">
     <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">6</div><div class="stat-label">Total</div></div>
     <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">6</div><div class="stat-label">To Film</div></div>
@@ -808,7 +718,7 @@
   <div class="add-form">
     <h3>+ New Solo Idea</h3>
     <div class="form-row"><input type="text" id="s-input-title" placeholder="Solo idea concept..."></div>
-    <div class="form-row"><textarea id="s-input-notes" placeholder="Notes, angle, camera setup... (optional)"></textarea></div>
+    <div class="form-row"><textarea id="s-input-notes" placeholder="Notes, execution idea, angle... (optional)"></textarea></div>
     <div class="form-row">
       <select id="s-input-priority">
         <option value="fire">🔥 Fire — Film ASAP</option>
@@ -821,15 +731,18 @@
         <option value="Mirror">Mirror</option>
         <option value="Waiting">Waiting</option>
         <option value="Setup">Setup</option>
-        <option value="Motivation">Motivation</option>
-        <option value="POV">POV</option>
+        <option value="Relatable">Relatable</option>
+        <option value="Gym Rules">Gym Rules</option>
+        <option value="Character">Character</option>
+        <option value="Pre-Workout">Pre-Workout</option>
+        <option value="Post-Workout">Post-Workout</option>
         <option value="Other">Other</option>
       </select>
     </div>
     <button class="add-btn add-btn-solo" onclick="addIdea(&#39;s&#39;)">ADD SOLO IDEA</button>
   </div>
   <div class="section-label">Solo Ideas — drag ⠿ to reorder</div>
-  <div class="ideas-list" id="s-list"><div class="idea-card p-fire solo-card" id="s-card-1" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,1)" ondragover="dragOver(event,&#39;s&#39;,1)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,1)" ondragend="dragEnd()">
+  <div class="ideas-list" id="s-list"><div class="idea-card p-fire solo-card" id="s-card-1" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,1)" ondragover="cardDragOver(event,&#39;s&#39;,1)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,1)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -843,35 +756,40 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,1)">
                 🎬 Shot List (0/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,1)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,1)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-1">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-1">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-1-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,1,1)" ondragover="shotDragOver(event,&#39;s&#39;,1,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,1,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,1,1)"></button>
-              <span class="shot-text">Wide — you rack weight, sit down on bench</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,1,1)">Wide — you rack weight, sit down on bench</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,1,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-1-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,1,2)" ondragover="shotDragOver(event,&#39;s&#39;,1,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,1,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,1,2)"></button>
-              <span class="shot-text">Closeup — phone screen, doing absolutely nothing</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,1,2)">Closeup — phone screen, doing absolutely nothing</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,1,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-1-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,1,3)" ondragover="shotDragOver(event,&#39;s&#39;,1,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,1,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,1,3)"></button>
-              <span class="shot-text">Cut wide — still sitting, long pause, no movement</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,1,3)">Cut wide — still sitting, long pause, no movement</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,1,3)">✕</button>
             </div>
         </div>
@@ -880,7 +798,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,1)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-2" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,2)" ondragover="dragOver(event,&#39;s&#39;,2)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,2)" ondragend="dragEnd()">
+    </div><div class="idea-card p-fire solo-card" id="s-card-2" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,2)" ondragover="cardDragOver(event,&#39;s&#39;,2)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,2)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -894,35 +812,40 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,2)">
                 🎬 Shot List (0/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,2)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,2)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-2">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-2">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-2-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,2,1)" ondragover="shotDragOver(event,&#39;s&#39;,2,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,2,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,2,1)"></button>
-              <span class="shot-text">You're about to start — pause, pull out phone</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,2,1)">You're about to start — pause, pull out phone</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,2,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-2-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,2,2)" ondragover="shotDragOver(event,&#39;s&#39;,2,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,2,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,2,2)"></button>
-              <span class="shot-text">Closeup: 'how to do incline bench press' typed in</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,2,2)">Closeup: 'how to do incline bench press' typed in</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,2,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-2-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,2,3)" ondragover="shotDragOver(event,&#39;s&#39;,2,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,2,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,2,3)"></button>
-              <span class="shot-text">Still watching the YouTube video, weights untouched</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,2,3)">Still watching the YouTube video, weights untouched</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,2,3)">✕</button>
             </div>
         </div>
@@ -931,7 +854,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,2)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high solo-card" id="s-card-3" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,3)" ondragover="dragOver(event,&#39;s&#39;,3)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,3)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high solo-card" id="s-card-3" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,3)" ondragover="cardDragOver(event,&#39;s&#39;,3)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,3)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -945,35 +868,40 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,3)">
                 🎬 Shot List (0/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,3)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,3)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-3">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-3">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-3-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,3,1)" ondragover="shotDragOver(event,&#39;s&#39;,3,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,3,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,3,1)"></button>
-              <span class="shot-text">Closeup — type and send 'at gym 💪'</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,3,1)">Closeup — type and send 'at gym 💪'</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,3,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-3-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,3,2)" ondragover="shotDragOver(event,&#39;s&#39;,3,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,3,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,3,2)"></button>
-              <span class="shot-text">Wide reveal — you're sitting doing absolutely nothing</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,3,2)">Wide reveal — you're sitting doing absolutely nothing</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,3,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-3-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,3,3)" ondragover="shotDragOver(event,&#39;s&#39;,3,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,3,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,3,3)"></button>
-              <span class="shot-text">Optional: cut to you scrolling TikTok immediately after</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,3,3)">Optional: cut to you scrolling TikTok immediately after</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,3,3)">✕</button>
             </div>
         </div>
@@ -982,7 +910,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,3)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high solo-card" id="s-card-4" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,4)" ondragover="dragOver(event,&#39;s&#39;,4)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,4)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high solo-card" id="s-card-4" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,4)" ondragover="cardDragOver(event,&#39;s&#39;,4)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,4)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -996,35 +924,40 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,4)">
                 🎬 Shot List (0/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,4)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,4)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-4">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-4">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-4-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,4,1)" ondragover="shotDragOver(event,&#39;s&#39;,4,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,4,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,4,1)"></button>
-              <span class="shot-text">Bag packed, about to leave — stop at mirror</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,4,1)">Bag packed, about to leave — stop at mirror</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,4,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-4-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,4,2)" ondragover="shotDragOver(event,&#39;s&#39;,4,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,4,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,4,2)"></button>
-              <span class="shot-text">Check angle 1, angle 2, angle 3… angle 6</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,4,2)">Check angle 1, angle 2, angle 3… angle 6</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,4,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-4-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,4,3)" ondragover="shotDragOver(event,&#39;s&#39;,4,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,4,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,4,3)"></button>
-              <span class="shot-text">Satisfied nod. Now you can leave.</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,4,3)">Satisfied nod. Now you can leave.</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,4,3)">✕</button>
             </div>
         </div>
@@ -1033,7 +966,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,4)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-5" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,5)" ondragover="dragOver(event,&#39;s&#39;,5)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,5)" ondragend="dragEnd()">
+    </div><div class="idea-card p-fire solo-card" id="s-card-5" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,5)" ondragover="cardDragOver(event,&#39;s&#39;,5)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,5)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -1047,41 +980,47 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,5)">
                 🎬 Shot List (0/4) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,5)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,5)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-5">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-5">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-5-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,5,1)" ondragover="shotDragOver(event,&#39;s&#39;,5,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,5,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,5,1)"></button>
-              <span class="shot-text">Wide — sit down on bench, weights loaded</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,5,1)">Wide — sit down on bench, weights loaded</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,5,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-5-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,5,2)" ondragover="shotDragOver(event,&#39;s&#39;,5,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,5,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,5,2)"></button>
-              <span class="shot-text">Closeup of hands doing nothing, just resting</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,5,2)">Closeup of hands doing nothing, just resting</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,5,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-5-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,5,3)" ondragover="shotDragOver(event,&#39;s&#39;,5,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,5,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,5,3)"></button>
-              <span class="shot-text">Time lapse or jump cuts — still just sitting</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,5,3)">Time lapse or jump cuts — still just sitting</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,5,3)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-5-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,5,4)" ondragover="shotDragOver(event,&#39;s&#39;,5,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,5,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,5,4)"></button>
-              <span class="shot-text">Finally grab the bar. That's the whole bit.</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,5,4)">Finally grab the bar. That's the whole bit.</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,5,4)">✕</button>
             </div>
         </div>
@@ -1090,7 +1029,7 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,5)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high solo-card" id="s-card-6" draggable="true" ondragstart="dragStart(event,&#39;s&#39;,6)" ondragover="dragOver(event,&#39;s&#39;,6)" ondragleave="dragLeave(event)" ondrop="dragDrop(event,&#39;s&#39;,6)" ondragend="dragEnd()">
+    </div><div class="idea-card p-high solo-card" id="s-card-6" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,6)" ondragover="cardDragOver(event,&#39;s&#39;,6)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,6)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -1104,35 +1043,40 @@
               <span class="tag tag-solo">Solo</span>
               
             </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,6)">
                 🎬 Shot List (0/3) ▼
               </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,6)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,6)">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section" id="shots-s-6">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-6">
           
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-6-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,6,1)" ondragover="shotDragOver(event,&#39;s&#39;,6,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,6,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,6,1)"></button>
-              <span class="shot-text">Spend time adjusting seat, clips, weight, foam pad…</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,6,1)">Spend time adjusting seat, clips, weight, foam pad…</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,6,1)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-6-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,6,2)" ondragover="shotDragOver(event,&#39;s&#39;,6,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,6,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,6,2)"></button>
-              <span class="shot-text">Get comfortable, position, breathe…</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,6,2)">Get comfortable, position, breathe…</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,6,2)">✕</button>
             </div>
-            <div class="shot-item">
+            <div class="shot-item" id="shot-el-s-6-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,6,3)" ondragover="shotDragOver(event,&#39;s&#39;,6,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,6,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,6,3)"></button>
-              <span class="shot-text">Do 2 reps. Done. Start breaking it down.</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,6,3)">Do 2 reps. Done. Start breaking it down.</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,6,3)">✕</button>
             </div>
         </div>
@@ -1143,6 +1087,52 @@
       </div>
     </div></div>
 </div>
+
+<!-- EDIT MODAL -->
+<div class="modal-overlay" id="edit-modal" onclick="closeModalIfOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title">✏️ Edit Idea</div>
+    <div class="modal-field">
+      <label class="modal-label">Concept</label>
+      <input class="modal-input" id="modal-title" type="text" placeholder="Idea concept...">
+    </div>
+    <div class="modal-field">
+      <label class="modal-label">Notes / Angle</label>
+      <textarea class="modal-textarea" id="modal-notes" placeholder="Notes, execution idea, angle..."></textarea>
+    </div>
+    <div class="modal-row">
+      <div class="modal-field">
+        <label class="modal-label">Priority</label>
+        <select class="modal-select" id="modal-priority">
+          <option value="fire">🔥 Fire</option>
+          <option value="high">🟠 High</option>
+          <option value="med">🟡 Medium</option>
+          <option value="low">⬜ Low</option>
+        </select>
+      </div>
+      <div class="modal-field">
+        <label class="modal-label">Category</label>
+        <select class="modal-select" id="modal-category">
+          <option value="Relatable">Relatable</option>
+          <option value="Gym Rules">Gym Rules</option>
+          <option value="Character">Character</option>
+          <option value="Pre-Workout">Pre-Workout</option>
+          <option value="Cardio">Cardio</option>
+          <option value="Post-Workout">Post-Workout</option>
+          <option value="Mirror">Mirror</option>
+          <option value="Phone">Phone</option>
+          <option value="Waiting">Waiting</option>
+          <option value="Setup">Setup</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+    <button class="modal-save-btn" onclick="saveModal()">SAVE CHANGES</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
 
 <script>
 // ===================== DATA =====================
@@ -1163,7 +1153,6 @@ const A_DEFAULT = [
   { id:9, title:"Waiting for equipment so long… you just go home", notes:"Slow walk to exit. Defeated energy.", priority:"med", category:"Gym Rules", done:false, shots:[]},
   { id:10, title:"Stranger walks up mid-set: 'you should try it THIS way' — fully wrong", notes:"Unsolicited advice character.", priority:"high", category:"Character", done:false, shots:[]},
 ];
-
 const S_DEFAULT = [
   { id:1, title:"Pretending to check phone between sets", notes:"Same energy as the Spotify one. Pocket 3 on tripod or floor.", priority:"fire", category:"Phone", done:false,
     shots:[{id:1,text:"Wide — you rack weight, sit down on bench",done:false},{id:2,text:"Closeup — phone screen, doing absolutely nothing",done:false},{id:3,text:"Cut wide — still sitting, long pause, no movement",done:false}]},
@@ -1183,20 +1172,30 @@ let aIdeas = JSON.parse(localStorage.getItem('cos-all') || 'null') || A_DEFAULT;
 let sIdeas = JSON.parse(localStorage.getItem('cos-solo') || 'null') || S_DEFAULT;
 let aNextId = Math.max(...aIdeas.map(i=>i.id),0)+1;
 let sNextId = Math.max(...sIdeas.map(i=>i.id),0)+1;
-let aFilter = 'all', sFilter = 'all';
+let aFilter='all', sFilter='all';
 let openShots = new Set();
-let dragSrc = null, dragTab = null;
+// card drag
+let dragSrc=null, dragTab=null;
+// shot drag
+let shotDragSrc=null, shotDragTab=null, shotDragIdeaId=null;
+// modal
+let modalTab=null, modalId=null;
 
 function save() {
   localStorage.setItem('cos-all', JSON.stringify(aIdeas));
   localStorage.setItem('cos-solo', JSON.stringify(sIdeas));
 }
-
 function getIdeas(tab) { return tab==='a' ? aIdeas : sIdeas; }
 function setIdeas(tab, arr) { if(tab==='a') aIdeas=arr; else sIdeas=arr; }
-
 function pLabel(p) { return {fire:'🔥 Fire',high:'High',med:'Medium',low:'Low'}[p]||p; }
 
+function showToast(msg) {
+  const t=document.getElementById('toast');
+  t.textContent=msg; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),1800);
+}
+
+// ===================== TAB =====================
 function switchTab(tab, btn) {
   document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
@@ -1212,8 +1211,8 @@ function setFilter(f, tab, btn) {
 }
 
 function getFiltered(tab) {
-  const ideas = getIdeas(tab);
-  const f = tab==='a' ? aFilter : sFilter;
+  const ideas=getIdeas(tab);
+  const f=tab==='a'?aFilter:sFilter;
   if(f==='fire') return ideas.filter(i=>i.priority==='fire');
   if(f==='high') return ideas.filter(i=>i.priority==='high');
   if(f==='todo') return ideas.filter(i=>!i.done);
@@ -1222,69 +1221,76 @@ function getFiltered(tab) {
 }
 
 function updateStats(tab) {
-  const ideas = getIdeas(tab);
-  const t = tab==='a'?'a':'s';
-  document.getElementById(`${t}-stat-total`).textContent = ideas.length;
-  document.getElementById(`${t}-stat-left`).textContent = ideas.filter(i=>!i.done).length;
-  document.getElementById(`${t}-stat-done`).textContent = ideas.filter(i=>i.done).length;
+  const ideas=getIdeas(tab);
+  const t=tab==='a'?'a':'s';
+  document.getElementById(`${t}-stat-total`).textContent=ideas.length;
+  document.getElementById(`${t}-stat-left`).textContent=ideas.filter(i=>!i.done).length;
+  document.getElementById(`${t}-stat-done`).textContent=ideas.filter(i=>i.done).length;
 }
 
+// ===================== RENDER =====================
 function renderTab(tab) {
   updateStats(tab);
-  const filtered = getFiltered(tab);
-  const listEl = document.getElementById(`${tab}-list`);
-  const isSolo = tab==='s';
-
-  if(!filtered.length) {
-    listEl.innerHTML=`<div class="empty"><span>😴</span>No ideas here yet</div>`;
-    return;
-  }
-
-  listEl.innerHTML = filtered.map(idea => {
-    const shots = idea.shots||[];
-    const shotDone = shots.filter(s=>s.done).length;
-    const isOpen = openShots.has(`${tab}-${idea.id}`);
-    const shotLabel = shots.length ? `(${shotDone}/${shots.length})` : '';
+  const filtered=getFiltered(tab);
+  const listEl=document.getElementById(`${tab}-list`);
+  const isSolo=tab==='s';
+  if(!filtered.length) { listEl.innerHTML=`<div class="empty"><span>😴</span>No ideas here yet</div>`; return; }
+  listEl.innerHTML=filtered.map(idea=>{
+    const shots=idea.shots||[];
+    const shotDone=shots.filter(s=>s.done).length;
+    const isOpen=openShots.has(`${tab}-${idea.id}`);
+    const shotLabel=shots.length?`(${shotDone}/${shots.length})`:'';
+    const pct=shots.length?Math.round(shotDone/shots.length*100):0;
     return `<div class="idea-card p-${idea.priority}${idea.done?' done':''}${isSolo?' solo-card':''}"
         id="${tab}-card-${idea.id}"
         draggable="true"
-        ondragstart="dragStart(event,'${tab}',${idea.id})"
-        ondragover="dragOver(event,'${tab}',${idea.id})"
-        ondragleave="dragLeave(event)"
-        ondrop="dragDrop(event,'${tab}',${idea.id})"
-        ondragend="dragEnd()">
+        ondragstart="cardDragStart(event,'${tab}',${idea.id})"
+        ondragover="cardDragOver(event,'${tab}',${idea.id})"
+        ondragleave="cardDragLeave(event)"
+        ondrop="cardDragDrop(event,'${tab}',${idea.id})"
+        ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
           <button class="check-btn" onclick="toggle('${tab}',${idea.id})">${idea.done?'✓':''}</button>
           <div class="card-content">
-            <div class="idea-title">${idea.title}</div>
-            ${idea.notes?`<div class="idea-notes">${idea.notes}</div>`:''}
+            <div class="idea-title">${escHtml(idea.title)}</div>
+            ${idea.notes?`<div class="idea-notes">${escHtml(idea.notes)}</div>`:''}
             <div class="card-meta">
               <span class="tag tag-priority ${idea.priority}">${pLabel(idea.priority)}</span>
-              <span class="tag tag-category">${idea.category}</span>
+              <span class="tag tag-category">${escHtml(idea.category)}</span>
               ${isSolo?'<span class="tag tag-solo">Solo</span>':''}
               ${idea.done?'<span class="tag tag-status">✓ Posted</span>':''}
             </div>
+            ${shots.length?`<div class="shot-progress"><div class="shot-progress-fill" style="width:${pct}%"></div></div>`:''}
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots('${tab}',${idea.id})">
                 🎬 Shot List ${shotLabel} ${isOpen?'▲':'▼'}
               </button>
+              <button class="edit-idea-btn" onclick="openModal('${tab}',${idea.id})">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea('${tab}',${idea.id})">✕</button>
             </div>
           </div>
         </div>
       </div>
       <div class="shot-list-section${isOpen?' open':''}" id="shots-${tab}-${idea.id}">
-        <div class="shot-list-header">🎬 Shot List</div>
-        <div class="shot-items">
-          ${shots.length ? shots.map((s,idx)=>`
-            <div class="shot-item${s.done?' shot-done':''}">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-${tab}-${idea.id}">
+          ${shots.length?shots.map((s,idx)=>`
+            <div class="shot-item${s.done?' shot-done':''}"
+              id="shot-el-${tab}-${idea.id}-${s.id}"
+              draggable="true"
+              ondragstart="shotDragStart(event,'${tab}',${idea.id},${s.id})"
+              ondragover="shotDragOver(event,'${tab}',${idea.id},${s.id})"
+              ondragleave="shotDragLeave(event)"
+              ondrop="shotDragDrop(event,'${tab}',${idea.id},${s.id})"
+              ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">${idx+1}</span>
               <button class="shot-check" onclick="toggleShot('${tab}',${idea.id},${s.id})">${s.done?'✓':''}</button>
-              <span class="shot-text">${s.text}</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,'${tab}',${idea.id},${s.id})">${escHtml(s.text)}</span>
               <button class="shot-delete" onclick="delShot('${tab}',${idea.id},${s.id})">✕</button>
-            </div>`).join('') : '<div class="no-shots-msg">No shots yet — add below</div>'}
+            </div>`).join(''):'<div class="no-shots-msg">No shots yet — add below</div>'}
         </div>
         <div class="add-shot-row">
           <input id="shot-in-${tab}-${idea.id}" type="text" placeholder="Describe the shot..."
@@ -1296,21 +1302,29 @@ function renderTab(tab) {
   }).join('');
 }
 
+function escHtml(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
 function renderAll() { renderTab('a'); renderTab('s'); }
 
-function toggle(tab, id) {
+// ===================== IDEA ACTIONS =====================
+function toggle(tab,id) {
   const ideas=getIdeas(tab); const i=ideas.find(x=>x.id===id);
   if(i){i.done=!i.done;save();renderTab(tab);}
 }
-function delIdea(tab, id) {
-  setIdeas(tab, getIdeas(tab).filter(x=>x.id!==id));
+function delIdea(tab,id) {
+  if(!confirm('Delete this idea?')) return;
+  setIdeas(tab,getIdeas(tab).filter(x=>x.id!==id));
   openShots.delete(`${tab}-${id}`); save(); renderTab(tab);
+  showToast('Idea deleted');
 }
 function addIdea(tab) {
-  const t=tab; const titleEl=document.getElementById(`${t}-input-title`);
-  const title=titleEl.value.trim(); if(!title)return;
+  const t=tab;
+  const titleEl=document.getElementById(`${t}-input-title`);
+  const title=titleEl.value.trim(); if(!title) return;
   const ideas=getIdeas(t);
-  const nid = t==='a' ? aNextId++ : sNextId++;
+  const nid=t==='a'?aNextId++:sNextId++;
   ideas.push({
     id:nid, title,
     notes:document.getElementById(`${t}-input-notes`).value.trim(),
@@ -1321,61 +1335,159 @@ function addIdea(tab) {
   titleEl.value='';
   document.getElementById(`${t}-input-notes`).value='';
   save(); renderTab(t);
+  showToast('Idea added 🔥');
 }
-function toggleShots(tab, id) {
+function toggleShots(tab,id) {
   const key=`${tab}-${id}`;
   openShots.has(key)?openShots.delete(key):openShots.add(key);
   renderTab(tab);
 }
-function addShot(tab, ideaId) {
+
+// ===================== SHOT ACTIONS =====================
+function addShot(tab,ideaId) {
   const inp=document.getElementById(`shot-in-${tab}-${ideaId}`);
-  const text=inp.value.trim(); if(!text)return;
-  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea)return;
+  const text=inp.value.trim(); if(!text) return;
+  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea) return;
   if(!idea.shots)idea.shots=[];
   const sid=Math.max(0,...idea.shots.map(s=>s.id))+1;
   idea.shots.push({id:sid,text,done:false});
   save(); renderTab(tab);
   setTimeout(()=>{const el=document.getElementById(`shot-in-${tab}-${ideaId}`);if(el)el.focus();},10);
 }
-function toggleShot(tab, ideaId, shotId) {
-  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea)return;
+function toggleShot(tab,ideaId,shotId) {
+  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea) return;
   const s=idea.shots.find(x=>x.id===shotId); if(s){s.done=!s.done;save();renderTab(tab);}
 }
-function delShot(tab, ideaId, shotId) {
-  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea)return;
+function delShot(tab,ideaId,shotId) {
+  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea) return;
   idea.shots=idea.shots.filter(s=>s.id!==shotId); save(); renderTab(tab);
 }
 
-// DRAG
-function dragStart(e,tab,id) {
+// Inline shot text editing
+function editShotText(e, tab, ideaId, shotId) {
+  e.stopPropagation();
+  const span=e.currentTarget;
+  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea) return;
+  const shot=idea.shots.find(s=>s.id===shotId); if(!shot) return;
+  const inp=document.createElement('input');
+  inp.type='text';
+  inp.className='shot-text-input';
+  inp.value=shot.text;
+  span.replaceWith(inp);
+  inp.focus();
+  inp.select();
+  function commit() {
+    const val=inp.value.trim();
+    if(val && val!==shot.text) { shot.text=val; save(); showToast('Shot updated'); }
+    renderTab(tab);
+    // re-open shots panel
+    openShots.add(`${tab}-${ideaId}`);
+    renderTab(tab);
+  }
+  inp.addEventListener('blur', commit);
+  inp.addEventListener('keydown', e2=>{
+    if(e2.key==='Enter'){e2.preventDefault();commit();}
+    if(e2.key==='Escape'){renderTab(tab); openShots.add(`${tab}-${ideaId}`); renderTab(tab);}
+  });
+}
+
+// ===================== CARD DRAG & DROP =====================
+function cardDragStart(e,tab,id) {
   dragSrc=id; dragTab=tab; e.dataTransfer.effectAllowed='move';
   setTimeout(()=>{const c=document.getElementById(`${tab}-card-${id}`);if(c)c.classList.add('dragging');},0);
 }
-function dragOver(e,tab,id) {
-  e.preventDefault(); if(tab!==dragTab||id===dragSrc)return;
+function cardDragOver(e,tab,id) {
+  e.preventDefault(); if(tab!==dragTab||id===dragSrc) return;
   document.querySelectorAll('.idea-card').forEach(c=>c.classList.remove('drag-over'));
   const c=document.getElementById(`${tab}-card-${id}`);if(c)c.classList.add('drag-over');
 }
-function dragLeave(e){e.currentTarget.classList.remove('drag-over');}
-function dragDrop(e,tab,targetId) {
+function cardDragLeave(e){e.currentTarget.classList.remove('drag-over');}
+function cardDragDrop(e,tab,targetId) {
   e.preventDefault();
-  if(dragSrc===null||dragSrc===targetId||tab!==dragTab)return;
+  if(dragSrc===null||dragSrc===targetId||tab!==dragTab) return;
   const ideas=getIdeas(tab);
   const si=ideas.findIndex(i=>i.id===dragSrc);
   const ti=ideas.findIndex(i=>i.id===targetId);
-  if(si===-1||ti===-1)return;
+  if(si===-1||ti===-1) return;
   const [moved]=ideas.splice(si,1);
   ideas.splice(ti,0,moved);
   save(); renderTab(tab);
 }
-function dragEnd(){
+function cardDragEnd(){
   document.querySelectorAll('.idea-card').forEach(c=>{c.classList.remove('dragging');c.classList.remove('drag-over');});
   dragSrc=null; dragTab=null;
 }
 
-// ENTER key
+// ===================== SHOT DRAG & DROP =====================
+function shotDragStart(e,tab,ideaId,shotId) {
+  shotDragSrc=shotId; shotDragTab=tab; shotDragIdeaId=ideaId;
+  e.dataTransfer.effectAllowed='move';
+  e.stopPropagation(); // prevent card drag
+  setTimeout(()=>{
+    const el=document.getElementById(`shot-el-${tab}-${ideaId}-${shotId}`);
+    if(el) el.classList.add('shot-dragging');
+  },0);
+}
+function shotDragOver(e,tab,ideaId,shotId) {
+  e.preventDefault(); e.stopPropagation();
+  if(tab!==shotDragTab||ideaId!==shotDragIdeaId||shotId===shotDragSrc) return;
+  document.querySelectorAll('.shot-item').forEach(s=>s.classList.remove('shot-drag-over'));
+  const el=document.getElementById(`shot-el-${tab}-${ideaId}-${shotId}`);
+  if(el) el.classList.add('shot-drag-over');
+}
+function shotDragLeave(e){e.stopPropagation();e.currentTarget.classList.remove('shot-drag-over');}
+function shotDragDrop(e,tab,ideaId,targetShotId) {
+  e.preventDefault(); e.stopPropagation();
+  if(shotDragSrc===null||shotDragSrc===targetShotId||tab!==shotDragTab||ideaId!==shotDragIdeaId) return;
+  const idea=getIdeas(tab).find(i=>i.id===ideaId); if(!idea) return;
+  const si=idea.shots.findIndex(s=>s.id===shotDragSrc);
+  const ti=idea.shots.findIndex(s=>s.id===targetShotId);
+  if(si===-1||ti===-1) return;
+  const [moved]=idea.shots.splice(si,1);
+  idea.shots.splice(ti,0,moved);
+  openShots.add(`${tab}-${ideaId}`);
+  save(); renderTab(tab);
+}
+function shotDragEnd(){
+  document.querySelectorAll('.shot-item').forEach(s=>{s.classList.remove('shot-dragging');s.classList.remove('shot-drag-over');});
+  shotDragSrc=null; shotDragTab=null; shotDragIdeaId=null;
+}
+
+// ===================== EDIT MODAL =====================
+function openModal(tab, id) {
+  const idea=getIdeas(tab).find(i=>i.id===id); if(!idea) return;
+  modalTab=tab; modalId=id;
+  document.getElementById('modal-title').value=idea.title;
+  document.getElementById('modal-notes').value=idea.notes||'';
+  document.getElementById('modal-priority').value=idea.priority;
+  document.getElementById('modal-category').value=idea.category;
+  document.getElementById('edit-modal').classList.add('open');
+  setTimeout(()=>document.getElementById('modal-title').focus(),80);
+}
+function closeModal() {
+  document.getElementById('edit-modal').classList.remove('open');
+  modalTab=null; modalId=null;
+}
+function closeModalIfOutside(e) {
+  if(e.target===document.getElementById('edit-modal')) closeModal();
+}
+function saveModal() {
+  const idea=getIdeas(modalTab).find(i=>i.id===modalId); if(!idea) return;
+  const title=document.getElementById('modal-title').value.trim();
+  if(!title) { document.getElementById('modal-title').focus(); return; }
+  idea.title=title;
+  idea.notes=document.getElementById('modal-notes').value.trim();
+  idea.priority=document.getElementById('modal-priority').value;
+  idea.category=document.getElementById('modal-category').value;
+  save(); renderTab(modalTab);
+  closeModal();
+  showToast('Saved ✓');
+}
+
+// ===================== KEYBOARD =====================
 document.getElementById('a-input-title').addEventListener('keydown',e=>{if(e.key==='Enter')addIdea('a');});
 document.getElementById('s-input-title').addEventListener('keydown',e=>{if(e.key==='Enter')addIdea('s');});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
 renderAll();
 </script>
