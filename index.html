@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_4.html -->
+<!-- saved from url=(0048)file:///Users/yasmani/Downloads/comedy-os_8.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Comedy OS 😭</title>
-<link href="./index_files/css2" rel="stylesheet">
+<link href="file:///Users/yasmani/Downloads/index_files/css2" rel="stylesheet">
 <style>
   :root {
     --bg: #0a0a0a;
@@ -21,7 +21,10 @@
     --purple: #a855f7;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:24px 16px 100px; }
+  body { background:var(--bg); color:var(--text); font-family:'DM Sans',sans-serif; min-height:100vh; padding:24px 16px 100px; scrollbar-width:none; -ms-overflow-style:none; }
+  body::-webkit-scrollbar { display:none; }
+  *::-webkit-scrollbar { display:none; }
+  * { scrollbar-width:none; -ms-overflow-style:none; }
 
   header { text-align:center; margin-bottom:20px; padding-top:8px; }
   header h1 { font-family:'Bebas Neue',sans-serif; font-size:52px; letter-spacing:3px; background:linear-gradient(135deg,#ff3c3c,#ff8c00); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
@@ -762,8 +765,8 @@
 <!-- TAB: SOLO -->
 <div class="tab-panel active" id="panel-s">
   <div class="stats-row">
-    <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">6</div><div class="stat-label">Total</div></div>
-    <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">6</div><div class="stat-label">To Film</div></div>
+    <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">8</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">8</div><div class="stat-label">To Film</div></div>
     <div class="stat"><div class="stat-num" id="s-stat-done" style="color:var(--green)">0</div><div class="stat-label">Posted</div></div>
   </div>
   <div class="filters">
@@ -817,7 +820,7 @@
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,1)">
-                🎬 Shot List (0/3) ▲
+                🎬 Shot List (0/3) ▼
               </button>
               <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,1)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,1)">✕</button>
@@ -825,7 +828,7 @@
           </div>
         </div>
       </div>
-      <div class="shot-list-section open" id="shots-s-1">
+      <div class="shot-list-section" id="shots-s-1">
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-s-1">
           
@@ -1143,11 +1146,158 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,6)">+</button>
         </div>
       </div>
-    </div></div><div class="idea-card p-fire solo-card" id="s-card-7" draggable="true" ondragstart="cardDragStart(event,'s',7)" ondragover="cardDragOver(event,'s',7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,'s',7)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire solo-card" id="s-card-7" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,7)" ondragover="cardDragOver(event,&#39;s&#39;,7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,7)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle('s',7)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,7)"></button>
+          <div class="card-content">
+            <div class="idea-title">POV: you're waiting for the squat rack</div>
+            <div class="idea-notes">Stand nearby awkwardly, check phone, pace around, finally it's free — do one rep and leave 💀</div>
+            <div class="card-meta">
+              <span class="tag tag-priority fire">🔥 Fire</span>
+              <span class="tag tag-category">Waiting</span>
+              <span class="tag tag-solo">Solo</span>
+              
+            </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
+            <div class="card-actions">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,7)">
+                🎬 Shot List (0/6) ▼
+              </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,7)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,7)">✕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-list-section" id="shots-s-7">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-7">
+          
+            <div class="shot-item" id="shot-el-s-7-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,1)" ondragover="shotDragOver(event,&#39;s&#39;,7,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">1</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,1)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,1)">Walk up confidently — someone's using it</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,1)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-7-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,2)" ondragover="shotDragOver(event,&#39;s&#39;,7,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">2</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,2)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,2)">Stand nearby with arms crossed</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,2)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-7-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,3)" ondragover="shotDragOver(event,&#39;s&#39;,7,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">3</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,3)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,3)">Check phone, look back — still there</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,3)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-7-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,4)" ondragover="shotDragOver(event,&#39;s&#39;,7,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">4</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,4)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,4)">Pace around awkwardly</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,4)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-7-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,5)" ondragover="shotDragOver(event,&#39;s&#39;,7,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,5)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,5)">Finally free — walk up fast</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,5)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-7-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,6)" ondragover="shotDragOver(event,&#39;s&#39;,7,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,6)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">6</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,6)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,6)">Do one rep, rerack, walk away 💀</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,6)">✕</button>
+            </div>
+        </div>
+        <div class="add-shot-row">
+          <input id="shot-in-s-7" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,7)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,7)">+</button>
+        </div>
+      </div>
+    </div><div class="idea-card p-fire solo-card" id="s-card-8" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,8)" ondragover="cardDragOver(event,&#39;s&#39;,8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,8)" ondragend="cardDragEnd()">
+      <div class="card-main">
+        <div class="card-top">
+          <span class="drag-handle" title="Drag to reorder">⠿</span>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,8)"></button>
+          <div class="card-content">
+            <div class="idea-title">POV: you forgot your headphones</div>
+            <div class="idea-notes">Walk in confident, reach for headphones… nothing. Dead stare. Look around at everyone else. Lift in misery 💀</div>
+            <div class="card-meta">
+              <span class="tag tag-priority fire">🔥 Fire</span>
+              <span class="tag tag-category">Relatable</span>
+              <span class="tag tag-solo">Solo</span>
+              
+            </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
+            <div class="card-actions">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,8)">
+                🎬 Shot List (0/5) ▼
+              </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,8)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,8)">✕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-list-section" id="shots-s-8">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-8">
+          
+            <div class="shot-item" id="shot-el-s-8-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,1)" ondragover="shotDragOver(event,&#39;s&#39;,8,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">1</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,1)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,1)">Walk in confidently, set bag down</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,1)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-8-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,2)" ondragover="shotDragOver(event,&#39;s&#39;,8,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">2</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,2)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,2)">Reach into bag for headphones… not there</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,2)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-8-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,3)" ondragover="shotDragOver(event,&#39;s&#39;,8,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">3</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,3)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,3)">Dead stare into camera 💀</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,3)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-8-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,4)" ondragover="shotDragOver(event,&#39;s&#39;,8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">4</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,4)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,4)">Look around at everyone else with headphones</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,4)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-8-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,5)" ondragover="shotDragOver(event,&#39;s&#39;,8,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,5)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,5)">Start lifting looking absolutely miserable</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,5)">✕</button>
+            </div>
+        </div>
+        <div class="add-shot-row">
+          <input id="shot-in-s-8" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,8)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,8)">+</button>
+        </div>
+      </div>
+    </div></div><div class="idea-card p-fire solo-card" id="s-card-7" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,7)" ondragover="cardDragOver(event,&#39;s&#39;,7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,7)" ondragend="cardDragEnd()">
+      <div class="card-main">
+        <div class="card-top">
+          <span class="drag-handle" title="Drag to reorder">⠿</span>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,7)"></button>
           <div class="card-content">
             <div class="idea-title">POV: you're waiting for the squat rack</div>
             <div class="idea-notes">Stand nearby awkwardly, check phone, pace around, finally it's free — do one rep and leave 💀</div>
@@ -1158,11 +1308,11 @@
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
-              <button class="shot-toggle-btn" onclick="toggleShots('s',7)">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,7)">
                 🎬 Shot List (0/6) ▼
               </button>
-              <button class="edit-idea-btn" onclick="openModal('s',7)">✏️ Edit</button>
-              <button class="delete-btn" onclick="delIdea('s',7)">✕</button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,7)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,7)">✕</button>
             </div>
           </div>
         </div>
@@ -1170,53 +1320,53 @@
       <div class="shot-list-section" id="shots-s-7">
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-s-7">
-          <div class="shot-item" id="shot-el-s-7-1" draggable="true" ondragstart="shotDragStart(event,'s',7,1)" ondragover="shotDragOver(event,'s',7,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,1)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,1)" ondragover="shotDragOver(event,&#39;s&#39;,7,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,1)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">1</span>
-            <button class="shot-check" onclick="toggleShot('s',7,1)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,1)">Walk up confidently — someone's using it</span>
-            <button class="shot-delete" onclick="delShot('s',7,1)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,1)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,1)">Walk up confidently — someone's using it</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,1)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-7-2" draggable="true" ondragstart="shotDragStart(event,'s',7,2)" ondragover="shotDragOver(event,'s',7,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,2)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,2)" ondragover="shotDragOver(event,&#39;s&#39;,7,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,2)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">2</span>
-            <button class="shot-check" onclick="toggleShot('s',7,2)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,2)">Stand nearby with arms crossed</span>
-            <button class="shot-delete" onclick="delShot('s',7,2)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,2)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,2)">Stand nearby with arms crossed</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,2)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-7-3" draggable="true" ondragstart="shotDragStart(event,'s',7,3)" ondragover="shotDragOver(event,'s',7,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,3)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,3)" ondragover="shotDragOver(event,&#39;s&#39;,7,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,3)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">3</span>
-            <button class="shot-check" onclick="toggleShot('s',7,3)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,3)">Check phone, look back — still there</span>
-            <button class="shot-delete" onclick="delShot('s',7,3)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,3)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,3)">Check phone, look back — still there</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,3)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-7-4" draggable="true" ondragstart="shotDragStart(event,'s',7,4)" ondragover="shotDragOver(event,'s',7,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,4)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,4)" ondragover="shotDragOver(event,&#39;s&#39;,7,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,4)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">4</span>
-            <button class="shot-check" onclick="toggleShot('s',7,4)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,4)">Pace around awkwardly</span>
-            <button class="shot-delete" onclick="delShot('s',7,4)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,4)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,4)">Pace around awkwardly</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,4)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-7-5" draggable="true" ondragstart="shotDragStart(event,'s',7,5)" ondragover="shotDragOver(event,'s',7,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,5)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,5)" ondragover="shotDragOver(event,&#39;s&#39;,7,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,5)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">5</span>
-            <button class="shot-check" onclick="toggleShot('s',7,5)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,5)">Finally free — walk up fast</span>
-            <button class="shot-delete" onclick="delShot('s',7,5)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,5)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,5)">Finally free — walk up fast</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,5)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-7-6" draggable="true" ondragstart="shotDragStart(event,'s',7,6)" ondragover="shotDragOver(event,'s',7,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',7,6)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-7-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,7,6)" ondragover="shotDragOver(event,&#39;s&#39;,7,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,7,6)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">6</span>
-            <button class="shot-check" onclick="toggleShot('s',7,6)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',7,6)">Do one rep, rerack, walk away 💀</span>
-            <button class="shot-delete" onclick="delShot('s',7,6)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,7,6)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,7,6)">Do one rep, rerack, walk away 💀</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,7,6)">✕</button>
           </div>
         </div>
         <div class="add-shot-row">
-          <input id="shot-in-s-7" type="text" placeholder="Describe the shot..." onkeydown="if(event.key==='Enter')addShot('s',7)">
-          <button class="add-shot-btn" onclick="addShot('s',7)">+</button>
+          <input id="shot-in-s-7" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,7)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,7)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-8" draggable="true" ondragstart="cardDragStart(event,'s',8)" ondragover="cardDragOver(event,'s',8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,'s',8)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire solo-card" id="s-card-8" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,8)" ondragover="cardDragOver(event,&#39;s&#39;,8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,8)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle('s',8)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,8)"></button>
           <div class="card-content">
             <div class="idea-title">POV: you forgot your headphones</div>
             <div class="idea-notes">Walk in confident, reach for headphones… nothing. Dead stare. Look around at everyone else. Lift in misery 💀</div>
@@ -1227,11 +1377,11 @@
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
-              <button class="shot-toggle-btn" onclick="toggleShots('s',8)">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,8)">
                 🎬 Shot List (0/5) ▼
               </button>
-              <button class="edit-idea-btn" onclick="openModal('s',8)">✏️ Edit</button>
-              <button class="delete-btn" onclick="delIdea('s',8)">✕</button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,8)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,8)">✕</button>
             </div>
           </div>
         </div>
@@ -1239,44 +1389,44 @@
       <div class="shot-list-section" id="shots-s-8">
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-s-8">
-          <div class="shot-item" id="shot-el-s-8-1" draggable="true" ondragstart="shotDragStart(event,'s',8,1)" ondragover="shotDragOver(event,'s',8,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',8,1)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-8-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,1)" ondragover="shotDragOver(event,&#39;s&#39;,8,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,1)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">1</span>
-            <button class="shot-check" onclick="toggleShot('s',8,1)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',8,1)">Walk in confidently, set bag down</span>
-            <button class="shot-delete" onclick="delShot('s',8,1)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,1)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,1)">Walk in confidently, set bag down</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,1)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-8-2" draggable="true" ondragstart="shotDragStart(event,'s',8,2)" ondragover="shotDragOver(event,'s',8,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',8,2)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-8-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,2)" ondragover="shotDragOver(event,&#39;s&#39;,8,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,2)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">2</span>
-            <button class="shot-check" onclick="toggleShot('s',8,2)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',8,2)">Reach into bag for headphones… not there</span>
-            <button class="shot-delete" onclick="delShot('s',8,2)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,2)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,2)">Reach into bag for headphones… not there</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,2)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-8-3" draggable="true" ondragstart="shotDragStart(event,'s',8,3)" ondragover="shotDragOver(event,'s',8,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',8,3)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-8-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,3)" ondragover="shotDragOver(event,&#39;s&#39;,8,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,3)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">3</span>
-            <button class="shot-check" onclick="toggleShot('s',8,3)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',8,3)">Dead stare into camera 💀</span>
-            <button class="shot-delete" onclick="delShot('s',8,3)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,3)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,3)">Dead stare into camera 💀</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,3)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-8-4" draggable="true" ondragstart="shotDragStart(event,'s',8,4)" ondragover="shotDragOver(event,'s',8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',8,4)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-8-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,4)" ondragover="shotDragOver(event,&#39;s&#39;,8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,4)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">4</span>
-            <button class="shot-check" onclick="toggleShot('s',8,4)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',8,4)">Look around at everyone else with headphones</span>
-            <button class="shot-delete" onclick="delShot('s',8,4)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,4)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,4)">Look around at everyone else with headphones</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,4)">✕</button>
           </div>
-          <div class="shot-item" id="shot-el-s-8-5" draggable="true" ondragstart="shotDragStart(event,'s',8,5)" ondragover="shotDragOver(event,'s',8,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,'s',8,5)" ondragend="shotDragEnd()">
+          <div class="shot-item" id="shot-el-s-8-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,5)" ondragover="shotDragOver(event,&#39;s&#39;,8,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,5)" ondragend="shotDragEnd()">
             <span class="shot-drag-handle">⠿</span><span class="shot-num">5</span>
-            <button class="shot-check" onclick="toggleShot('s',8,5)"></button>
-            <span class="shot-text" title="Click to edit" onclick="editShotText(event,'s',8,5)">Start lifting looking absolutely miserable</span>
-            <button class="shot-delete" onclick="delShot('s',8,5)">✕</button>
+            <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,5)"></button>
+            <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,5)">Start lifting looking absolutely miserable</span>
+            <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,5)">✕</button>
           </div>
         </div>
         <div class="add-shot-row">
-          <input id="shot-in-s-8" type="text" placeholder="Describe the shot..." onkeydown="if(event.key==='Enter')addShot('s',8)">
-          <button class="add-shot-btn" onclick="addShot('s',8)">+</button>
+          <input id="shot-in-s-8" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,8)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,8)">+</button>
         </div>
       </div>
     </div></div>
-</div>
+
 
 <!-- TAB: WEEKLY PLAN -->
 <div class="tab-panel" id="panel-w">
@@ -1541,7 +1691,7 @@
   </div>
 </div>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">✅ Synced from cloud</div>
 
 <script>
 // ===================== DATA =====================
@@ -1575,25 +1725,80 @@ const S_DEFAULT = [
     shots:[{id:1,text:"Wide — sit down on bench, weights loaded",done:false},{id:2,text:"Closeup of hands doing nothing, just resting",done:false},{id:3,text:"Time lapse or jump cuts — still just sitting",done:false},{id:4,text:"Finally grab the bar. That's the whole bit.",done:false}]},
   { id:6, title:"Setting up the bench forever, use it for 2 seconds", notes:"The elaborate setup ritual vs the actual set.", priority:"high", category:"Setup", done:false,
     shots:[{id:1,text:"Spend time adjusting seat, clips, weight, foam pad…",done:false},{id:2,text:"Get comfortable, position, breathe…",done:false},{id:3,text:"Do 2 reps. Done. Start breaking it down.",done:false}]},
+  { id:7, title:"POV: you're waiting for the squat rack", notes:"Stand nearby awkwardly, check phone, pace around, finally it's free — do one rep and leave 💀", priority:"fire", category:"Waiting", done:false,
+    shots:[{id:1,text:"Walk up confidently — someone's using it",done:false},{id:2,text:"Stand nearby with arms crossed",done:false},{id:3,text:"Check phone, look back — still there",done:false},{id:4,text:"Pace around awkwardly",done:false},{id:5,text:"Finally free — walk up fast",done:false},{id:6,text:"Do one rep, rerack, walk away 💀",done:false}]},
+  { id:8, title:"POV: you forgot your headphones", notes:"Walk in confident, reach for headphones… nothing. Dead stare. Look around at everyone else. Lift in misery 💀", priority:"fire", category:"Relatable", done:false,
+    shots:[{id:1,text:"Walk in confidently, set bag down",done:false},{id:2,text:"Reach into bag for headphones… not there",done:false},{id:3,text:"Dead stare into camera 💀",done:false},{id:4,text:"Look around at everyone else with headphones",done:false},{id:5,text:"Start lifting looking absolutely miserable",done:false}]},
 ];
 
-let aIdeas = JSON.parse(localStorage.getItem('cos-all') || 'null') || A_DEFAULT;
-let sIdeas = JSON.parse(localStorage.getItem('cos-solo') || 'null') || S_DEFAULT;
-let aNextId = Math.max(...aIdeas.map(i=>i.id),0)+1;
-let sNextId = Math.max(...sIdeas.map(i=>i.id),0)+1;
+// ===================== SUPABASE CONFIG =====================
+const SUPABASE_URL = 'https://henxtxofntrkewtzbqtj.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imhlbnh0eG9mbnRya2V3dHpicXRqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkyNjQ3MzgsImV4cCI6MjA5NDg0MDczOH0.EceWj4AaKO4u2S3-jOL1Xan5ubszl23IqZgmAJxc3uc';
+
+async function sbGet(key) {
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/comedy_os?key=eq.${key}&select=value`, {
+      headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+    });
+    const data = await res.json();
+    return data && data[0] ? JSON.parse(data[0].value) : null;
+  } catch(e) { return null; }
+}
+
+async function sbSet(key, value) {
+  try {
+    await fetch(`${SUPABASE_URL}/rest/v1/comedy_os`, {
+      method: 'POST',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`,
+        'Content-Type': 'application/json',
+        'Prefer': 'resolution=merge-duplicates'
+      },
+      body: JSON.stringify({ key, value: JSON.stringify(value) })
+    });
+  } catch(e) { localStorage.setItem(key, JSON.stringify(value)); }
+}
+
+let aIdeas = A_DEFAULT;
+let sIdeas = S_DEFAULT;
+let aNextId = 1;
+let sNextId = 1;
 let aFilter='all', sFilter='all';
 let openShots = new Set();
-// card drag
 let dragSrc=null, dragTab=null;
-// shot drag
 let shotDragSrc=null, shotDragTab=null, shotDragIdeaId=null;
-// modal
 let modalTab=null, modalId=null;
+let dbLoaded = false;
 
-function save() {
+async function loadFromSupabase() {
+  showToast('Loading from cloud…');
+  const [aData, sData, wpData] = await Promise.all([
+    sbGet('cos-all'),
+    sbGet('cos-solo'),
+    sbGet('cos-wp')
+  ]);
+  if(aData) aIdeas = aData;
+  else { aIdeas = JSON.parse(localStorage.getItem('cos-all') || 'null') || A_DEFAULT; }
+  if(sData) sIdeas = sData;
+  else { sIdeas = JSON.parse(localStorage.getItem('cos-solo') || 'null') || S_DEFAULT; }
+  if(wpData) localStorage.setItem('cos-wp', JSON.stringify(wpData));
+  aNextId = Math.max(...aIdeas.map(i=>i.id),0)+1;
+  sNextId = Math.max(...sIdeas.map(i=>i.id),0)+1;
+  dbLoaded = true;
+  renderAll();
+  showToast('✅ Synced from cloud');
+}
+
+async function save() {
   localStorage.setItem('cos-all', JSON.stringify(aIdeas));
   localStorage.setItem('cos-solo', JSON.stringify(sIdeas));
+  await Promise.all([
+    sbSet('cos-all', aIdeas),
+    sbSet('cos-solo', sIdeas)
+  ]);
 }
+
 function getIdeas(tab) { return tab==='a' ? aIdeas : sIdeas; }
 function setIdeas(tab, arr) { if(tab==='a') aIdeas=arr; else sIdeas=arr; }
 function pLabel(p) { return {fire:'🔥 Fire',high:'High',med:'Medium',low:'Low'}[p]||p; }
@@ -1931,6 +2136,7 @@ function wpLoadTasks() {
 }
 function wpSaveTasks(data) {
   localStorage.setItem('cos-wp', JSON.stringify(data));
+  sbSet('cos-wp', data);
 }
 
 function wpCatColor(cat) {
@@ -2052,7 +2258,14 @@ document.getElementById('a-input-title').addEventListener('keydown',e=>{if(e.key
 document.getElementById('s-input-title').addEventListener('keydown',e=>{if(e.key==='Enter')addIdea('s');});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 
-renderAll();
+// Load from Supabase on startup
+loadFromSupabase().catch(() => {
+  aIdeas = JSON.parse(localStorage.getItem('cos-all') || 'null') || A_DEFAULT;
+  sIdeas = JSON.parse(localStorage.getItem('cos-solo') || 'null') || S_DEFAULT;
+  aNextId = Math.max(...aIdeas.map(i=>i.id),0)+1;
+  sNextId = Math.max(...sIdeas.map(i=>i.id),0)+1;
+  renderAll();
+});
 </script>
 
 
