@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0054)file:///Users/yasmani/Downloads/comedy-os-moved_1.html -->
+<!-- saved from url=(0049)file:///Users/yasmani/Downloads/comedy-os_16.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -237,8 +237,9 @@
 
 <div class="tab-bar">
   <button class="tab-btn" onclick="switchTab(&#39;a&#39;,this)">🔥 All Ideas</button>
-  <button class="tab-btn active" onclick="switchTab(&#39;s&#39;,this)">🎬 Solo Funny Gym</button>
+  <button class="tab-btn" onclick="switchTab(&#39;s&#39;,this)">🎬 Solo Funny Gym</button>
   <button class="tab-btn" onclick="switchTab(&#39;w&#39;,this)">📅 Weekly Plan</button>
+  <button class="tab-btn active" onclick="switchTab(&#39;t&#39;,this)">✅ Edit Tracker</button>
 </div>
 
 <!-- TAB: ALL IDEAS -->
@@ -1029,11 +1030,11 @@
 </div>
 
 <!-- TAB: SOLO -->
-<div class="tab-panel active" id="panel-s">
+<div class="tab-panel" id="panel-s">
   <div class="stats-row">
-    <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">12</div><div class="stat-label">Total</div></div>
-    <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">12</div><div class="stat-label">To Film</div></div>
-    <div class="stat"><div class="stat-num" id="s-stat-done" style="color:var(--green)">0</div><div class="stat-label">Posted</div></div>
+    <div class="stat"><div class="stat-num" id="s-stat-total" style="color:var(--purple)">14</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-num" id="s-stat-left" style="color:var(--blue)">2</div><div class="stat-label">To Film</div></div>
+    <div class="stat"><div class="stat-num" id="s-stat-done" style="color:var(--green)">12</div><div class="stat-label">Posted</div></div>
   </div>
   <div class="filters">
     <button class="filter-btn active" onclick="setFilter(&#39;all&#39;,&#39;s&#39;,this)">All</button>
@@ -1069,11 +1070,11 @@
     <button class="add-btn add-btn-solo" onclick="addIdea(&#39;s&#39;)">ADD SOLO IDEA</button>
   </div>
   <div class="section-label">Solo Ideas — drag ⠿ to reorder</div>
-  <div class="ideas-list" id="s-list"><div class="idea-card p-fire solo-card" id="s-card-1" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,1)" ondragover="cardDragOver(event,&#39;s&#39;,1)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,1)" ondragend="cardDragEnd()">
+  <div class="ideas-list" id="s-list"><div class="idea-card p-fire done solo-card" id="s-card-1" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,1)" ondragover="cardDragOver(event,&#39;s&#39;,1)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,1)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,1)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,1)">✓</button>
           <div class="card-content">
             <div class="idea-title">Pretending to check phone between sets</div>
             <div class="idea-notes">Same energy as the Spotify one. Pocket 3 on tripod or floor.</div>
@@ -1081,7 +1082,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Phone</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1125,11 +1126,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,1)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-2" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,2)" ondragover="cardDragOver(event,&#39;s&#39;,2)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,2)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-2" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,2)" ondragover="cardDragOver(event,&#39;s&#39;,2)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,2)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,2)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,2)">✓</button>
           <div class="card-content">
             <div class="idea-title">Googling how to do the exercise mid-set</div>
             <div class="idea-notes">Closeup of phone mid-rep or between sets.</div>
@@ -1137,7 +1138,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Phone</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1181,11 +1182,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,2)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high solo-card" id="s-card-3" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,3)" ondragover="cardDragOver(event,&#39;s&#39;,3)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,3)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-high done solo-card" id="s-card-3" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,3)" ondragover="cardDragOver(event,&#39;s&#39;,3)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,3)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,3)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,3)">✓</button>
           <div class="card-content">
             <div class="idea-title">Texting someone "at gym" (but doing something else entirely)</div>
             <div class="idea-notes">Could flip it — send the text while clearly doing nothing at the gym.</div>
@@ -1193,7 +1194,7 @@
               <span class="tag tag-priority high">High</span>
               <span class="tag tag-category">Phone</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1237,11 +1238,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,3)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-high solo-card" id="s-card-4" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,4)" ondragover="cardDragOver(event,&#39;s&#39;,4)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,4)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-high done solo-card" id="s-card-4" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,4)" ondragover="cardDragOver(event,&#39;s&#39;,4)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,4)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,4)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,4)">✓</button>
           <div class="card-content">
             <div class="idea-title">Checking pumped angles before leaving</div>
             <div class="idea-notes">Mirror moment. Just you flexing from every angle.</div>
@@ -1249,7 +1250,7 @@
               <span class="tag tag-priority high">High</span>
               <span class="tag tag-category">Mirror</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1293,11 +1294,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,4)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-5" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,5)" ondragover="cardDragOver(event,&#39;s&#39;,5)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,5)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-5" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,5)" ondragover="cardDragOver(event,&#39;s&#39;,5)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,5)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,5)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,5)">✓</button>
           <div class="card-content">
             <div class="idea-title">Sitting on the bench forever before your first set</div>
             <div class="idea-notes">Just existing. The internal struggle is silent.</div>
@@ -1305,7 +1306,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Waiting</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1356,11 +1357,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,5)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-6" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,6)" ondragover="cardDragOver(event,&#39;s&#39;,6)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,6)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-6" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,6)" ondragover="cardDragOver(event,&#39;s&#39;,6)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,6)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,6)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,6)">✓</button>
           <div class="card-content">
             <div class="idea-title">POV: you take the gym VERY seriously (machine setup)</div>
             <div class="idea-notes">Find most complex machine. Spend forever adjusting. Gets stuck. Finally do ONE rep and leave. Caption: all that for one rep</div>
@@ -1368,7 +1369,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Setup</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1447,11 +1448,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,6)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-7" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,7)" ondragover="cardDragOver(event,&#39;s&#39;,7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,7)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-7" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,7)" ondragover="cardDragOver(event,&#39;s&#39;,7)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,7)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,7)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,7)">✓</button>
           <div class="card-content">
             <div class="idea-title">POV: you've been waiting 20 minutes (squat rack flip)</div>
             <div class="idea-notes">Viewer is waiting, YOU are hogging the rack. Elaborate setup, acknowledge them, one rep, leave. Caption: sorry for the wait</div>
@@ -1459,7 +1460,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Waiting</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1531,11 +1532,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,7)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-8" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,8)" ondragover="cardDragOver(event,&#39;s&#39;,8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,8)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-8" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,8)" ondragover="cardDragOver(event,&#39;s&#39;,8)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,8)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,8)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,8)">✓</button>
           <div class="card-content">
             <div class="idea-title">POV: you forgot your headphones</div>
             <div class="idea-notes">Walk in reach for headphones not there. Dead stare. Look around. Then just LEAVE — walk to car and drive off. Caption: not even gonna try</div>
@@ -1543,7 +1544,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Relatable</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1581,33 +1582,33 @@
               <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,3)">Closeup — dead stare into camera</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,3)">✕</button>
             </div>
-            <div class="shot-item" id="shot-el-s-8-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,4)" ondragover="shotDragOver(event,&#39;s&#39;,8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,4)" ondragend="shotDragEnd()">
+            <div class="shot-item" id="shot-el-s-8-7" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,7)" ondragover="shotDragOver(event,&#39;s&#39;,8,7)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,7)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,7)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,7)">In car — start it up drive away. Workout cancelled.</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,7)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-8-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,4)" ondragover="shotDragOver(event,&#39;s&#39;,8,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,4)"></button>
               <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,4)">Wide — look around at everyone with headphones in</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,4)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-8-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,5)" ondragover="shotDragOver(event,&#39;s&#39;,8,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,5)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
-              <span class="shot-num">5</span>
+              <span class="shot-num">6</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,5)"></button>
               <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,5)">Wide — pick bag up walk straight to exit no hesitation</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,5)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-8-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,6)" ondragover="shotDragOver(event,&#39;s&#39;,8,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,6)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
-              <span class="shot-num">6</span>
+              <span class="shot-num">7</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,6)"></button>
               <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,6)">Outside — walk to car</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,6)">✕</button>
-            </div>
-            <div class="shot-item" id="shot-el-s-8-7" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,8,7)" ondragover="shotDragOver(event,&#39;s&#39;,8,7)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,8,7)" ondragend="shotDragEnd()">
-              <span class="shot-drag-handle">⠿</span>
-              <span class="shot-num">7</span>
-              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,8,7)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,8,7)">In car — start it up drive away. Workout cancelled.</span>
-              <button class="shot-delete" onclick="delShot(&#39;s&#39;,8,7)">✕</button>
             </div>
         </div>
         <div class="add-shot-row">
@@ -1615,11 +1616,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,8)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-9" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,9)" ondragover="cardDragOver(event,&#39;s&#39;,9)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,9)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-9" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,9)" ondragover="cardDragOver(event,&#39;s&#39;,9)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,9)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,9)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,9)">✓</button>
           <div class="card-content">
             <div class="idea-title">POV: you were next 💀</div>
             <div class="idea-notes">Tank top = you waiting. T-shirt + flipped hat = the guy who drops his water bottle on the machine without looking at you. Dead stare to camera.</div>
@@ -1627,12 +1628,12 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Gym Rules</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,9)">
-                🎬 Shot List (0/4) ▼
+                🎬 Shot List (0/9) ▼
               </button>
               <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,9)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,9)">✕</button>
@@ -1648,29 +1649,64 @@
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,1)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,1)">Wide — you standing next to machine, arms crossed, clearly waiting</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,1)">Medium shot- Hoodie guy working out hard</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,1)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-9-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,2)" ondragover="shotDragOver(event,&#39;s&#39;,9,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,2)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,2)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,2)">Medium on your face — slight smile, 'finally it's my turn' energy</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,2)">Wide shot- gets off machine and walks away</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,2)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-9-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,3)" ondragover="shotDragOver(event,&#39;s&#39;,9,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,3)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,3)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,3)">T-shirt + flipped hat — walk in with purpose, drop water bottle on machine, no eye contact, keep walking off frame</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,3)">Wide shot- walking to machine quickly</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,3)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-9-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,4)" ondragover="shotDragOver(event,&#39;s&#39;,9,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,4)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,4)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,4)">Back to tank top — slow turn to camera, dead expression, hold 2-3 seconds 💀</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,4)">wide shot - Hat flipped guy throws water bottle</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,4)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-9-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,5)" ondragover="shotDragOver(event,&#39;s&#39;,9,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,5)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,5)">Medium shot- of water bottle flying</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,5)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-9-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,6)" ondragover="shotDragOver(event,&#39;s&#39;,9,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,6)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">6</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,6)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,6)">close up of water bottle landing on the machine</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,6)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-9-7" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,7)" ondragover="shotDragOver(event,&#39;s&#39;,9,7)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,7)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">7</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,7)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,7)">Medium shot Hat flipped guy shrugs and smiles</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,7)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-9-8" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,8)" ondragover="shotDragOver(event,&#39;s&#39;,9,8)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,8)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">8</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,8)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,8)">Wide shot - Hat flipped guy starts lifting</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,8)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-9-9" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,9,9)" ondragover="shotDragOver(event,&#39;s&#39;,9,9)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,9,9)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">9</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,9,9)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,9,9)">Close up - Hat regular guy looks and gives a mean mean look then walks away</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,9,9)">✕</button>
             </div>
         </div>
         <div class="add-shot-row">
@@ -1678,11 +1714,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,9)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-10" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,10)" ondragover="cardDragOver(event,&#39;s&#39;,10)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,10)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-10" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,10)" ondragover="cardDragOver(event,&#39;s&#39;,10)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,10)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,10)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,10)">✓</button>
           <div class="card-content">
             <div class="idea-title">Day 1 guy 💀</div>
             <div class="idea-notes">T-shirt lifting heavy → tank top lifting WAY heavier → 'yeah it's my first day' voiceover.</div>
@@ -1690,12 +1726,12 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Character</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
-            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:40%"></div></div>
             <div class="card-actions">
               <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,10)">
-                🎬 Shot List (0/4) ▼
+                🎬 Shot List (2/5) ▼
               </button>
               <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,10)">✏️ Edit</button>
               <button class="delete-btn" onclick="delIdea(&#39;s&#39;,10)">✕</button>
@@ -1707,33 +1743,40 @@
         <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
         <div class="shot-items" id="shot-items-s-10">
           
-            <div class="shot-item" id="shot-el-s-10-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,1)" ondragover="shotDragOver(event,&#39;s&#39;,10,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,1)" ondragend="shotDragEnd()">
+            <div class="shot-item shot-done" id="shot-el-s-10-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,1)" ondragover="shotDragOver(event,&#39;s&#39;,10,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,1)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">1</span>
-              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,1)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,1)">T-shirt — medium shot, lifting a solid weight with visible effort</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,1)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,1)">Médium shot- Tanktop “so it’s your first day at the gym”, lets see what you can do”</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,10,1)">✕</button>
             </div>
-            <div class="shot-item" id="shot-el-s-10-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,2)" ondragover="shotDragOver(event,&#39;s&#39;,10,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,2)" ondragend="shotDragEnd()">
+            <div class="shot-item shot-done" id="shot-el-s-10-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,2)" ondragover="shotDragOver(event,&#39;s&#39;,10,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,2)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">2</span>
-              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,2)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,2)">Tank top — same or different machine, lifting noticeably MORE weight, clean strong reps</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,2)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,2)">Medium shot- T-shirt “ yeah it’s my first time!”</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,10,2)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-10-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,3)" ondragover="shotDragOver(event,&#39;s&#39;,10,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,3)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">3</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,3)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,3)">Closeup on face — dead serious, no expression</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,3)">Medium shot of Tanktop- going for max weight struggling can’t get 1</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,10,3)">✕</button>
             </div>
             <div class="shot-item" id="shot-el-s-10-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,4)" ondragover="shotDragOver(event,&#39;s&#39;,10,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,4)" ondragend="shotDragEnd()">
               <span class="shot-drag-handle">⠿</span>
               <span class="shot-num">4</span>
               <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,4)"></button>
-              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,4)">Audio overlay: 'yeah it's my first day!' as you max out the stack</span>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,4)">Medium shot of T-shirt- well I guess I will try it! “Maxes out”</span>
               <button class="shot-delete" onclick="delShot(&#39;s&#39;,10,4)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-10-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,10,5)" ondragover="shotDragOver(event,&#39;s&#39;,10,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,10,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,10,5)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,10,5)">T-shirt Wide shot of maxxing weight while Tanktop standing next with mouth open suprised</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,10,5)">✕</button>
             </div>
         </div>
         <div class="add-shot-row">
@@ -1741,11 +1784,11 @@
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,10)">+</button>
         </div>
       </div>
-    </div><div class="idea-card p-fire solo-card" id="s-card-11" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,11)" ondragover="cardDragOver(event,&#39;s&#39;,11)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,11)" ondragend="cardDragEnd()">
+    </div><div class="idea-card p-fire done solo-card" id="s-card-11" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,11)" ondragover="cardDragOver(event,&#39;s&#39;,11)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,11)" ondragend="cardDragEnd()">
       <div class="card-main">
         <div class="card-top">
           <span class="drag-handle" title="Drag to reorder">⠿</span>
-          <button class="check-btn" onclick="toggle(&#39;s&#39;,11)"></button>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,11)">✓</button>
           <div class="card-content">
             <div class="idea-title">POV: you finish your set and someone jumps on it 💀</div>
             <div class="idea-notes">Part 2 to Vid 9. Finish heavy set, step back mid-rest — guy hops right on. Same tank/t-shirt costume swap.</div>
@@ -1753,7 +1796,7 @@
               <span class="tag tag-priority fire">🔥 Fire</span>
               <span class="tag tag-category">Gym Rules</span>
               <span class="tag tag-solo">Solo</span>
-              
+              <span class="tag tag-status">✓ Posted</span>
             </div>
             <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
             <div class="card-actions">
@@ -1879,6 +1922,174 @@
         <div class="add-shot-row">
           <input id="shot-in-s-12" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,12)">
           <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,12)">+</button>
+        </div>
+      </div>
+    </div><div class="idea-card p-fire solo-card" id="s-card-14" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,14)" ondragover="cardDragOver(event,&#39;s&#39;,14)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,14)" ondragend="cardDragEnd()">
+      <div class="card-main">
+        <div class="card-top">
+          <span class="drag-handle" title="Drag to reorder">⠿</span>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,14)"></button>
+          <div class="card-content">
+            <div class="idea-title">Song took too long</div>
+            
+            <div class="card-meta">
+              <span class="tag tag-priority fire">🔥 Fire</span>
+              <span class="tag tag-category">Phone</span>
+              <span class="tag tag-solo">Solo</span>
+              
+            </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:0%"></div></div>
+            <div class="card-actions">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,14)">
+                🎬 Shot List (0/7) ▼
+              </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,14)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,14)">✕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-list-section" id="shots-s-14">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-14">
+          
+            <div class="shot-item" id="shot-el-s-14-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,1)" ondragover="shotDragOver(event,&#39;s&#39;,14,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">1</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,1)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,1)">Wide shot- walk up to setup the machine</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,1)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,2)" ondragover="shotDragOver(event,&#39;s&#39;,14,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">2</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,2)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,2)">2 mediums- loading the weight</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,2)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,3)" ondragover="shotDragOver(event,&#39;s&#39;,14,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">3</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,3)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,3)">Medium -  getting hyped ready to do the lift</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,3)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,4)" ondragover="shotDragOver(event,&#39;s&#39;,14,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">4</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,4)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,4)">Wide shot about to do the lift</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,4)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,5)" ondragover="shotDragOver(event,&#39;s&#39;,14,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,5)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,5)">close up waiting for the part of the song to come on and waiting and waiting</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,5)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,6)" ondragover="shotDragOver(event,&#39;s&#39;,14,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,6)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">6</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,6)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,6)">medium shot getting up nodding no</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,6)">✕</button>
+            </div>
+            <div class="shot-item" id="shot-el-s-14-7" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,14,7)" ondragover="shotDragOver(event,&#39;s&#39;,14,7)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,14,7)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">7</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,14,7)"></button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,14,7)">wide shot walking away and leaving</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,14,7)">✕</button>
+            </div>
+        </div>
+        <div class="add-shot-row">
+          <input id="shot-in-s-14" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,14)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,14)">+</button>
+        </div>
+      </div>
+    </div><div class="idea-card p-fire done solo-card" id="s-card-15" draggable="true" ondragstart="cardDragStart(event,&#39;s&#39;,15)" ondragover="cardDragOver(event,&#39;s&#39;,15)" ondragleave="cardDragLeave(event)" ondrop="cardDragDrop(event,&#39;s&#39;,15)" ondragend="cardDragEnd()">
+      <div class="card-main">
+        <div class="card-top">
+          <span class="drag-handle" title="Drag to reorder">⠿</span>
+          <button class="check-btn" onclick="toggle(&#39;s&#39;,15)">✓</button>
+          <div class="card-content">
+            <div class="idea-title">POV: You forget your preworkout</div>
+            
+            <div class="card-meta">
+              <span class="tag tag-priority fire">🔥 Fire</span>
+              <span class="tag tag-category">Phone</span>
+              <span class="tag tag-solo">Solo</span>
+              <span class="tag tag-status">✓ Posted</span>
+            </div>
+            <div class="shot-progress"><div class="shot-progress-fill" style="width:100%"></div></div>
+            <div class="card-actions">
+              <button class="shot-toggle-btn" onclick="toggleShots(&#39;s&#39;,15)">
+                🎬 Shot List (7/7) ▼
+              </button>
+              <button class="edit-idea-btn" onclick="openModal(&#39;s&#39;,15)">✏️ Edit</button>
+              <button class="delete-btn" onclick="delIdea(&#39;s&#39;,15)">✕</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="shot-list-section" id="shots-s-15">
+        <div class="shot-list-header">🎬 Shot List — drag ⠿ to reorder shots</div>
+        <div class="shot-items" id="shot-items-s-15">
+          
+            <div class="shot-item shot-done" id="shot-el-s-15-1" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,1)" ondragover="shotDragOver(event,&#39;s&#39;,15,1)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,1)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">1</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,1)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,1)">Wide — walk in confidently set bag down</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,1)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-2" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,2)" ondragover="shotDragOver(event,&#39;s&#39;,15,2)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,2)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">2</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,2)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,2)">Closeup — reach for pre not there</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,2)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-3" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,3)" ondragover="shotDragOver(event,&#39;s&#39;,15,3)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,3)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">3</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,3)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,3)">Closeup — dead stare into camera</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,3)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-4" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,4)" ondragover="shotDragOver(event,&#39;s&#39;,15,4)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,4)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">4</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,4)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,4)">Medium- About to walk away</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,4)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-5" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,5)" ondragover="shotDragOver(event,&#39;s&#39;,15,5)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,5)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">5</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,5)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,5)">Wide shot- walk away</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,5)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-6" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,6)" ondragover="shotDragOver(event,&#39;s&#39;,15,6)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,6)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">6</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,6)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,6)">medium shot - walk away angrily</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,6)">✕</button>
+            </div>
+            <div class="shot-item shot-done" id="shot-el-s-15-7" draggable="true" ondragstart="shotDragStart(event,&#39;s&#39;,15,7)" ondragover="shotDragOver(event,&#39;s&#39;,15,7)" ondragleave="shotDragLeave(event)" ondrop="shotDragDrop(event,&#39;s&#39;,15,7)" ondragend="shotDragEnd()">
+              <span class="shot-drag-handle">⠿</span>
+              <span class="shot-num">7</span>
+              <button class="shot-check" onclick="toggleShot(&#39;s&#39;,15,7)">✓</button>
+              <span class="shot-text" title="Click to edit" onclick="editShotText(event,&#39;s&#39;,15,7)">Wide shot- walk away out door</span>
+              <button class="shot-delete" onclick="delShot(&#39;s&#39;,15,7)">✕</button>
+            </div>
+        </div>
+        <div class="add-shot-row">
+          <input id="shot-in-s-15" type="text" placeholder="Describe the shot..." onkeydown="if(event.key===&#39;Enter&#39;)addShot(&#39;s&#39;,15)">
+          <button class="add-shot-btn" onclick="addShot(&#39;s&#39;,15)">+</button>
         </div>
       </div>
     </div></div>
@@ -2103,6 +2314,768 @@
     </div></div>
 </div>
 
+<!-- TAB: EDIT TRACKER -->
+<div class="tab-panel active" id="panel-t">
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num" id="t-stat-total">12</div><div class="stat-label">Total</div></div>
+    <div class="stat"><div class="stat-num" id="t-stat-edited" style="color:var(--accent2)">1</div><div class="stat-label">Edited</div></div>
+    <div class="stat"><div class="stat-num" id="t-stat-posted" style="color:var(--green)">1</div><div class="stat-label">Posted</div></div>
+  </div>
+
+  <div class="add-form" style="margin-bottom:20px;">
+    <h3>Add Video</h3>
+    <div class="form-row">
+      <input type="text" id="t-title-input" placeholder="Video title or concept..." style="flex:2;">
+      <input type="text" id="t-date-input" placeholder="Date filmed (e.g. May 25)" style="flex:1;">
+    </div>
+    <button class="add-btn" onclick="tAddVideo()">+ ADD VIDEO</button>
+  </div>
+
+  <div class="section-label">Videos by date</div>
+  <div id="t-list" style="display:flex;flex-direction:column;gap:12px;">
+    <div class="t-group">
+      <div class="t-group-header" onclick="tToggleGroup(&#39;May 19&#39;)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="t-group-title" ondblclick="event.stopPropagation();tInlineEditDate(&#39;May 19&#39;)" title="Double-click to edit date">May 19</span>
+          <span class="t-group-meta">(3 videos)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--green)">1/3 posted</span>
+          <span style="color:var(--muted);font-size:12px;">▾</span>
+        </div>
+      </div>
+      <div class="t-group-body">
+        
+          <div class="t-card" id="tcard-1">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-1" ondblclick="tEditField(1,&#39;title&#39;)" title="Double-click to edit">Video 1</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">0%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(1)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(1)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:0%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step" onclick="tToggleStep(1,0)" ondblclick="event.stopPropagation();tInlineEditStep(1,0)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(1,1)" ondblclick="event.stopPropagation();tInlineEditStep(1,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(1,2)" ondblclick="event.stopPropagation();tInlineEditStep(1,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(1,3)" ondblclick="event.stopPropagation();tInlineEditStep(1,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(1,4)" ondblclick="event.stopPropagation();tInlineEditStep(1,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-2">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-2" ondblclick="tEditField(2,&#39;title&#39;)" title="Double-click to edit">Video 2</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">0%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(2)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(2)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:0%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step" onclick="tToggleStep(2,0)" ondblclick="event.stopPropagation();tInlineEditStep(2,0)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(2,1)" ondblclick="event.stopPropagation();tInlineEditStep(2,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(2,2)" ondblclick="event.stopPropagation();tInlineEditStep(2,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(2,3)" ondblclick="event.stopPropagation();tInlineEditStep(2,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(2,4)" ondblclick="event.stopPropagation();tInlineEditStep(2,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-3">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-3" ondblclick="tEditField(3,&#39;title&#39;)" title="Double-click to edit">Video 3</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                <span style="font-size:10px;font-weight:500;background:rgba(34,197,94,0.15);color:var(--green);border:1px solid rgba(34,197,94,0.3);padding:2px 8px;border-radius:20px;">posted</span>
+                <span style="font-size:11px;color:var(--muted);">100%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(3)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(3)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:100%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(3,0)" ondblclick="event.stopPropagation();tInlineEditStep(3,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(3,1)" ondblclick="event.stopPropagation();tInlineEditStep(3,1)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(3,2)" ondblclick="event.stopPropagation();tInlineEditStep(3,2)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(3,3)" ondblclick="event.stopPropagation();tInlineEditStep(3,3)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(3,4)" ondblclick="event.stopPropagation();tInlineEditStep(3,4)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="t-group">
+      <div class="t-group-header" onclick="tToggleGroup(&#39;May 20&#39;)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="t-group-title" ondblclick="event.stopPropagation();tInlineEditDate(&#39;May 20&#39;)" title="Double-click to edit date">May 20</span>
+          <span class="t-group-meta">(2 videos)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--green)">0/2 posted</span>
+          <span style="color:var(--muted);font-size:12px;">▾</span>
+        </div>
+      </div>
+      <div class="t-group-body">
+        
+          <div class="t-card" id="tcard-4">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-4" ondblclick="tEditField(4,&#39;title&#39;)" title="Double-click to edit">Video 1</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(4)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(4)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(4,0)" ondblclick="event.stopPropagation();tInlineEditStep(4,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(4,1)" ondblclick="event.stopPropagation();tInlineEditStep(4,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(4,2)" ondblclick="event.stopPropagation();tInlineEditStep(4,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(4,3)" ondblclick="event.stopPropagation();tInlineEditStep(4,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(4,4)" ondblclick="event.stopPropagation();tInlineEditStep(4,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-5">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-5" ondblclick="tEditField(5,&#39;title&#39;)" title="Double-click to edit">Video 2</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(5)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(5)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(5,0)" ondblclick="event.stopPropagation();tInlineEditStep(5,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(5,1)" ondblclick="event.stopPropagation();tInlineEditStep(5,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(5,2)" ondblclick="event.stopPropagation();tInlineEditStep(5,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(5,3)" ondblclick="event.stopPropagation();tInlineEditStep(5,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(5,4)" ondblclick="event.stopPropagation();tInlineEditStep(5,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="t-group">
+      <div class="t-group-header" onclick="tToggleGroup(&#39;May 22&#39;)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="t-group-title" ondblclick="event.stopPropagation();tInlineEditDate(&#39;May 22&#39;)" title="Double-click to edit date">May 22</span>
+          <span class="t-group-meta">(3 videos)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--green)">0/3 posted</span>
+          <span style="color:var(--muted);font-size:12px;">▾</span>
+        </div>
+      </div>
+      <div class="t-group-body">
+        
+          <div class="t-card" id="tcard-6">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-6" ondblclick="tEditField(6,&#39;title&#39;)" title="Double-click to edit">Video 1</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(6)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(6)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(6,0)" ondblclick="event.stopPropagation();tInlineEditStep(6,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(6,1)" ondblclick="event.stopPropagation();tInlineEditStep(6,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(6,2)" ondblclick="event.stopPropagation();tInlineEditStep(6,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(6,3)" ondblclick="event.stopPropagation();tInlineEditStep(6,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(6,4)" ondblclick="event.stopPropagation();tInlineEditStep(6,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-7">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-7" ondblclick="tEditField(7,&#39;title&#39;)" title="Double-click to edit">Video 2</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(7)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(7)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(7,0)" ondblclick="event.stopPropagation();tInlineEditStep(7,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(7,1)" ondblclick="event.stopPropagation();tInlineEditStep(7,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(7,2)" ondblclick="event.stopPropagation();tInlineEditStep(7,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(7,3)" ondblclick="event.stopPropagation();tInlineEditStep(7,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(7,4)" ondblclick="event.stopPropagation();tInlineEditStep(7,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-8">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-8" ondblclick="tEditField(8,&#39;title&#39;)" title="Double-click to edit">Video 3</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(8)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(8)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(8,0)" ondblclick="event.stopPropagation();tInlineEditStep(8,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(8,1)" ondblclick="event.stopPropagation();tInlineEditStep(8,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(8,2)" ondblclick="event.stopPropagation();tInlineEditStep(8,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(8,3)" ondblclick="event.stopPropagation();tInlineEditStep(8,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(8,4)" ondblclick="event.stopPropagation();tInlineEditStep(8,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="t-group">
+      <div class="t-group-header" onclick="tToggleGroup(&#39;May 23&#39;)">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="t-group-title" ondblclick="event.stopPropagation();tInlineEditDate(&#39;May 23&#39;)" title="Double-click to edit date">May 23</span>
+          <span class="t-group-meta">(4 videos)</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--green)">0/4 posted</span>
+          <span style="color:var(--muted);font-size:12px;">▾</span>
+        </div>
+      </div>
+      <div class="t-group-body">
+        
+          <div class="t-card" id="tcard-9">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-9" ondblclick="tEditField(9,&#39;title&#39;)" title="Double-click to edit">Video 1</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(9)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(9)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(9,0)" ondblclick="event.stopPropagation();tInlineEditStep(9,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(9,1)" ondblclick="event.stopPropagation();tInlineEditStep(9,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(9,2)" ondblclick="event.stopPropagation();tInlineEditStep(9,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(9,3)" ondblclick="event.stopPropagation();tInlineEditStep(9,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(9,4)" ondblclick="event.stopPropagation();tInlineEditStep(9,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-10">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-10" ondblclick="tEditField(10,&#39;title&#39;)" title="Double-click to edit">Video 2</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(10)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(10)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(10,0)" ondblclick="event.stopPropagation();tInlineEditStep(10,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(10,1)" ondblclick="event.stopPropagation();tInlineEditStep(10,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(10,2)" ondblclick="event.stopPropagation();tInlineEditStep(10,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(10,3)" ondblclick="event.stopPropagation();tInlineEditStep(10,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(10,4)" ondblclick="event.stopPropagation();tInlineEditStep(10,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-11">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-11" ondblclick="tEditField(11,&#39;title&#39;)" title="Double-click to edit">Video 3</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">80%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(11)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(11)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:80%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(11,0)" ondblclick="event.stopPropagation();tInlineEditStep(11,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(11,1)" ondblclick="event.stopPropagation();tInlineEditStep(11,1)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(11,2)" ondblclick="event.stopPropagation();tInlineEditStep(11,2)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(11,3)" ondblclick="event.stopPropagation();tInlineEditStep(11,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step done" onclick="tToggleStep(11,4)" ondblclick="event.stopPropagation();tInlineEditStep(11,4)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+          <div class="t-card" id="tcard-12">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-12" ondblclick="tEditField(12,&#39;title&#39;)" title="Double-click to edit">Video 4</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                
+                <span style="font-size:11px;color:var(--muted);">20%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(12)" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(12)">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:20%"></div></div>
+            <div class="t-steps">
+              
+                <div class="t-step done" onclick="tToggleStep(12,0)" ondblclick="event.stopPropagation();tInlineEditStep(12,0)">
+                  <div class="t-step-check">✓</div>
+                  <div class="t-step-label" title="Double-click to rename">Trim video</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(12,1)" ondblclick="event.stopPropagation();tInlineEditStep(12,1)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Song</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(12,2)" ondblclick="event.stopPropagation();tInlineEditStep(12,2)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Add Sound Design</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(12,3)" ondblclick="event.stopPropagation();tInlineEditStep(12,3)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Captions</div>
+                </div>
+              
+                <div class="t-step" onclick="tToggleStep(12,4)" ondblclick="event.stopPropagation();tInlineEditStep(12,4)">
+                  <div class="t-step-check"></div>
+                  <div class="t-step-label" title="Double-click to rename">Video ready to post</div>
+                </div>
+              
+            </div>
+          </div>
+      </div>
+    </div></div>
+</div>
+
+<style>
+.t-group { background:var(--card); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+.t-group-header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; cursor:pointer; }
+.t-group-title { font-size:14px; font-weight:500; }
+.t-group-meta { font-size:11px; color:var(--muted); }
+.t-group-body { border-top:1px solid var(--border); padding:12px 14px; display:flex; flex-direction:column; gap:10px; }
+.t-group-body.hidden { display:none; }
+.t-card { background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px; }
+.t-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; }
+.t-card-title { font-size:13px; font-weight:500; }
+.t-progress { height:3px; background:var(--border); border-radius:2px; margin-bottom:10px; }
+.t-progress-bar { height:100%; border-radius:2px; background:linear-gradient(90deg,var(--accent),var(--accent2)); transition:width 0.3s; }
+.t-steps { display:flex; flex-direction:column; gap:6px; }
+.t-step { display:flex; align-items:center; gap:8px; cursor:pointer; }
+.t-step-check { width:16px; height:16px; border-radius:4px; border:1px solid var(--border); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10px; transition:all 0.2s; }
+.t-step.done .t-step-check { background:var(--green); border-color:var(--green); color:#fff; }
+.t-step-label { font-size:12px; color:var(--muted); }
+.t-step.done .t-step-label { text-decoration:line-through; color:#333; }
+.t-delete { background:transparent; border:none; color:var(--muted); cursor:pointer; font-size:13px; padding:2px 4px; }
+.t-delete:hover { color:var(--accent); }
+</style>
+
+<script>
+const T_STEPS = ['Trim video','Add Song','Add Sound Design','Captions','Video ready to post'];
+let tVideos = [];
+let tOpenGroups = new Set();
+
+function tLoad() {
+  try { tVideos = JSON.parse(localStorage.getItem('cos-tracker') || '[]'); } catch(e) { tVideos = []; }
+  tOpenGroups = new Set(tVideos.map(v=>v.date));
+}
+
+function tSave() {
+  localStorage.setItem('cos-tracker', JSON.stringify(tVideos));
+}
+
+function tToggleGroup(date) {
+  if(tOpenGroups.has(date)) tOpenGroups.delete(date); else tOpenGroups.add(date);
+  tRender();
+}
+
+function tAddVideo() {
+  const title = document.getElementById('t-title-input').value.trim();
+  const date = document.getElementById('t-date-input').value.trim();
+  if(!title) return;
+  tVideos.push({ id: Date.now(), title, date, steps: T_STEPS.map(s => ({ label:s, done:false })) });
+  tSave();
+  document.getElementById('t-title-input').value = '';
+  document.getElementById('t-date-input').value = '';
+  tRender();
+}
+
+function tToggleStep(vid, si) {
+  const v = tVideos.find(v=>v.id===vid);
+  if(v) { v.steps[si].done = !v.steps[si].done; tSave(); tRender(); }
+}
+
+function tDelete(vid) {
+  tVideos = tVideos.filter(v=>v.id!==vid);
+  tSave();
+  tRender();
+}
+
+function tRender() {
+  const list = document.getElementById('t-list');
+  if(!list) return;
+  const total = tVideos.length;
+  const edited = tVideos.filter(v=>v.steps.slice(0,4).every(s=>s.done)).length;
+  const posted = tVideos.filter(v=>v.steps.every(s=>s.done)).length;
+  document.getElementById('t-stat-total').textContent = total;
+  document.getElementById('t-stat-edited').textContent = edited;
+  document.getElementById('t-stat-posted').textContent = posted;
+
+  const groups = {};
+  tVideos.forEach(v => {
+    const d = v.date || 'No date';
+    if(!groups[d]) groups[d] = [];
+    groups[d].push(v);
+  });
+
+  list.innerHTML = Object.entries(groups).map(([date, vids]) => {
+    const isOpen = tOpenGroups.has(date);
+    const postedCount = vids.filter(v=>v.steps.every(s=>s.done)).length;
+    return `
+    <div class="t-group">
+      <div class="t-group-header" onclick="tToggleGroup('${date}')">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span class="t-group-title" ondblclick="event.stopPropagation();tInlineEditDate('${date}')" title="Double-click to edit date">${date}</span>
+          <span class="t-group-meta">(${vids.length} video${vids.length>1?'s':''})</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:11px;color:var(--green)">${postedCount}/${vids.length} posted</span>
+          <span style="color:var(--muted);font-size:12px;">${isOpen?'▾':'▸'}</span>
+        </div>
+      </div>
+      ${isOpen ? `<div class="t-group-body">
+        ${vids.map(v => {
+          const doneCount = v.steps.filter(s=>s.done).length;
+          const pct = Math.round((doneCount/v.steps.length)*100);
+          return `
+          <div class="t-card" id="tcard-${v.id}">
+            <div class="t-card-top">
+              <div class="t-card-title" id="t-title-${v.id}" ondblclick="tEditField(${v.id},'title')" title="Double-click to edit">${v.title}</div>
+              <div style="display:flex;align-items:center;gap:8px;">
+                ${v.steps.every(s=>s.done) ? `<span style="font-size:10px;font-weight:500;background:rgba(34,197,94,0.15);color:var(--green);border:1px solid rgba(34,197,94,0.3);padding:2px 8px;border-radius:20px;">posted</span>` : ''}
+                <span style="font-size:11px;color:var(--muted);">${pct}%</span>
+                <button style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:12px;padding:2px 4px;" onclick="tOpenEdit(${v.id})" title="Edit">✏️</button>
+                <button class="t-delete" onclick="tDelete(${v.id})">✕</button>
+              </div>
+            </div>
+            <div class="t-progress"><div class="t-progress-bar" style="width:${pct}%"></div></div>
+            <div class="t-steps">
+              ${v.steps.map((s,si) => `
+                <div class="t-step${s.done?' done':''}" onclick="tToggleStep(${v.id},${si})" ondblclick="event.stopPropagation();tInlineEditStep(${v.id},${si})">
+                  <div class="t-step-check">${s.done?'✓':''}</div>
+                  <div class="t-step-label" title="Double-click to rename">${s.label}</div>
+                </div>
+              `).join('')}
+            </div>
+          </div>`;
+        }).join('')}
+      </div>` : ''}
+    </div>`;
+  }).join('');
+}
+
+function tOpenEdit(vid) {
+  const v = tVideos.find(v=>v.id===vid);
+  if(!v) return;
+  document.getElementById('t-edit-modal').style.display='flex';
+  document.getElementById('t-edit-title').value = v.title;
+  document.getElementById('t-edit-date').value = v.date || '';
+  document.getElementById('t-edit-modal').dataset.vid = vid;
+}
+
+function tCloseEdit() {
+  document.getElementById('t-edit-modal').style.display='none';
+}
+
+function tSaveEdit() {
+  const vid = parseInt(document.getElementById('t-edit-modal').dataset.vid);
+  const v = tVideos.find(v=>v.id===vid);
+  if(!v) return;
+  v.title = document.getElementById('t-edit-title').value.trim() || v.title;
+  v.date = document.getElementById('t-edit-date').value.trim() || v.date;
+  tSave();
+  tCloseEdit();
+  tRender();
+}
+
+function tEditField(vid, field) {
+  const v = tVideos.find(v=>v.id===vid);
+  if(!v) return;
+  tOpenEdit(vid);
+}
+
+function tInlineEditStep(vid, si) {
+  const v = tVideos.find(v=>v.id===vid);
+  if(!v) return;
+  const newLabel = prompt('Rename step:', v.steps[si].label);
+  if(newLabel && newLabel.trim()) {
+    v.steps[si].label = newLabel.trim();
+    tSave();
+    tRender();
+  }
+}
+
+function tInlineEditDate(oldDate) {
+  const newDate = prompt('Rename date group:', oldDate);
+  if(newDate && newDate.trim() && newDate.trim() !== oldDate) {
+    tVideos.forEach(v => { if(v.date === oldDate) v.date = newDate.trim(); });
+    tOpenGroups.delete(oldDate);
+    tOpenGroups.add(newDate.trim());
+    tSave();
+    tRender();
+  }
+}
+
+tLoad();
+setTimeout(tRender, 100);
+document.addEventListener('DOMContentLoaded', () => { tRender(); });
+</script>
+
+<div id="t-edit-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;width:90%;max-width:400px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <span style="font-size:14px;font-weight:500;">Edit Video</span>
+      <button onclick="tCloseEdit()" style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:16px;">✕</button>
+    </div>
+    <div style="margin-bottom:12px;">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px;">Title</label>
+      <input id="t-edit-title" type="text" placeholder="Video title..." style="width:100%;">
+    </div>
+    <div style="margin-bottom:16px;">
+      <label style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block;margin-bottom:6px;">Date filmed</label>
+      <input id="t-edit-date" type="text" placeholder="e.g. May 25" style="width:100%;">
+    </div>
+    <button onclick="tSaveEdit()" style="width:100%;background:linear-gradient(135deg,var(--accent),var(--accent2));color:white;border:none;padding:10px;border-radius:8px;font-family:&#39;DM Sans&#39;,sans-serif;font-size:14px;font-weight:500;cursor:pointer;">Save</button>
+  </div>
+</div>
+
 <!-- EDIT MODAL -->
 <div class="modal-overlay" id="edit-modal" onclick="closeModalIfOutside(event)">
   <div class="modal">
@@ -2284,6 +3257,7 @@ function switchTab(tab, btn) {
   btn.classList.add('active');
   document.getElementById(`panel-${tab}`).classList.add('active');
   if(tab==='w') renderWP();
+  if(tab==='t') tRender();
 }
 
 function setFilter(f, tab, btn) {
